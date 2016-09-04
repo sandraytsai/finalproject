@@ -2,24 +2,32 @@ var StateMain = {
 
   preload: function() {
     // load images into library
-    // forceOrientation takes true or false values for arguments.
-    game.scale.forceOrientation(landscape, portait);
+
+    game.scale.forceOrientation(true, false);
   },
 
 
 
   create: function() {
     // setup objects, variables, sounds, text, sprites, explosions, etc.
-    console.log("[Ready!] `create: fn`");
+
     this.setListeners();
   },
 
   // putting listeners on a seperate function, it helps to keep the listeners
     // on the same place so it's easier to find.
-  setListeners: function(){
-    game.scale.enterIncorrectOrientation.add(function, scope);
-    game.scale.leaveIncorrectOrientation.add(function, scope);
-  }
+  setListeners: function() {
+    game.scale.enterIncorrectOrientation.add(this.wrongWay, this);
+    game.scale.leaveIncorrectOrientation.add(this.rightWay, this);
+  },
+
+  wrongWay: function() {
+    document.getElementById("wrongWay").style.display="block";
+  },
+
+  rightWay: function() {
+    document.getElementById("wrongWay").style.display="none";
+  },
 
 
 
