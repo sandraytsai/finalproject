@@ -12,6 +12,7 @@ window.onload = function() {
     Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, "ph_game");
   }
 
-  game.state.add("StateMain", StateMain);
-  game.state.start("StateMain");
+  game.state.add("stateMain", stateMain);
+  game.state.add("stateTitle", stateTitle);
+  game.state.start("stateTitle");
 }
