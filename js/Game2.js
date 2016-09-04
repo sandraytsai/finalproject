@@ -6,11 +6,11 @@ var player;
 var cursors;
 var diamonds;
 var skillpoints = 0;
-var skillText; 
+var skillText;
 var diamond;
 var block;
 var weapon;
-var firstaid; 
+var firstaid;
 
 theGame2.prototype = {
   create: function(){
@@ -46,7 +46,7 @@ theGame2.prototype = {
     diamonds.enableBody = true;
 
     var diamond = diamonds.create(400, 0, 'diamond');
-    diamond.body.gravity.y = 300; 
+    diamond.body.gravity.y = 300;
     diamond.body.bounce.y = 0.3;
 
     // firstaid = 'people'
@@ -62,11 +62,11 @@ theGame2.prototype = {
     this.physics.arcade.enable(player);
 
     player.body.bounce.y = 0.2;
-    player.body.gravity.y = 300;
+    player.body.gravity.y = 100;
     player.body.collideWorldBounds = true;
 
     player.animations.add('left', [0, 1], 10, true);
-    player.animations.add('right', [2, 3], 10, true);
+    player.animations.add('right', [6,7,8,9], 1, true);
 
 
     weapon = this.add.weapon(30, 'bullet');
@@ -98,18 +98,18 @@ theGame2.prototype = {
 
     if (cursors.up.isDown && player.body.touching.down)
     {
-      player.body.velocity.y = -300;
+      player.body.velocity.y = -50;
     }
 
     if (cursors.left.isDown)
     {
-      player.body.velocity.x = -200;
+      player.body.velocity.x = -500;
       player.animations.play('left');
 
     }
     else if (cursors.right.isDown)
     {
-      player.body.velocity.x = 200;
+      player.body.velocity.x = 500;
       player.animations.play('right');
     }
     else
@@ -126,8 +126,8 @@ theGame2.prototype = {
   },
   collectDiamonds: function(player, diamond){
     diamond.kill();
-    skillpoints += 1; 
-    skillText.text = 'Skills:' + skillpoints; 
+    skillpoints += 1;
+    skillText.text = 'Skills:' + skillpoints;
   },
   collectFirstaids: function(game){
     block = this.add.image(700, 180, 'pinkblock');

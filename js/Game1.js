@@ -6,11 +6,11 @@ var player;
 var cursors;
 var diamonds;
 var skillpoints = 0;
-var skillText; 
+var skillText;
 var diamond;
 var block;
 var weapon;
-var firstaid; 
+var firstaid;
 
 theGame1.prototype = {
   create: function(){
@@ -46,7 +46,7 @@ theGame1.prototype = {
     diamonds.enableBody = true;
 
     var diamond = diamonds.create(400, 0, 'diamond');
-    diamond.body.gravity.y = 300; 
+    diamond.body.gravity.y = 300;
     diamond.body.bounce.y = 0.3;
 
     // firstaid = 'people'
@@ -77,7 +77,11 @@ theGame1.prototype = {
     weapon.trackSprite(player, 0, 0, true);
 
 
-    skillText = this.add.text(16, 16, 'Skills: 0', { fontSize: '32px', fill: '#000' });
+    skillText = this.add.text(16, 16, 'Skills: 0', {
+        fontSize: '32px',
+        fill: '#000'
+    });
+
     skillText.fixedToCamera = true;
 
     cursors = this.input.keyboard.createCursorKeys();
@@ -126,8 +130,8 @@ theGame1.prototype = {
   },
   collectDiamonds: function(player, diamond){
     diamond.kill();
-    skillpoints += 1; 
-    skillText.text = 'Skills:' + skillpoints; 
+    skillpoints += 1;
+    skillText.text = 'Skills:' + skillpoints;
   },
   collectFirstaids: function(game){
     block = this.add.image(700, 180, 'pinkblock');
