@@ -3,7 +3,7 @@ var StateMain = {
   preload: function() {
     // load images into library
 
-
+    game.scale.forceOrientation(landscape, portrait);
   },
 
 
