@@ -2,8 +2,8 @@ var StateMain = {
 
   preload: function() {
     // load images into library
-
-    game.scale.forceOrientation(landscape, portrait);
+    // forceOrientation takes true or false values for arguments.
+    game.scale.forceOrientation(landscape, portait);
   },
 
 
@@ -11,8 +11,15 @@ var StateMain = {
   create: function() {
     // setup objects, variables, sounds, text, sprites, explosions, etc.
     console.log("[Ready!] `create: fn`");
-
+    this.setListeners();
   },
+
+  // putting listeners on a seperate function, it helps to keep the listeners
+    // on the same place so it's easier to find.
+  setListeners: function(){
+    game.scale.enterIncorrectOrientation.add(function, scope);
+    game.scale.leaveIncorrectOrientation.add(function, scope);
+  }
 
 
 
@@ -21,4 +28,5 @@ var StateMain = {
 
 
   }
+
 }
