@@ -109,9 +109,9 @@ theGame.prototype = {
     this.physics.arcade.collide(diamonds, platforms);
     this.physics.arcade.collide(firstaids, platforms);
 
-    this.physics.arcade.overlap(player, diamonds, this.collectDiamonds, null, (player, diamond))
+    this.physics.arcade.overlap(player, diamonds, this.collectDiamonds, null, this)
     this.physics.arcade.overlap(player, firstaids, this.collectFirstaids, null, this)
-    this.physics.arcade.overlap(weapon.bullets, diamonds, this.attackDiamonds, null, this)
+    this.physics.arcade.overlap(weapon.bullets, enemy, this.attackEnemy, null, this)
     this.physics.arcade.overlap(player, enemy, this.decreaseHealth);
 
     player.body.velocity.x = 0;
@@ -149,8 +149,8 @@ theGame.prototype = {
   collectFirstaids: function(game){
     var block = this.add.image(700, 180, 'pinkblock');
   },
-  attackDiamonds: function(weapon, diamond) {
-    diamond.kill()
+  attackEnemy: function(enemy, weapon) {
+    enemy.kill()
   },
   moveEnemy: function(enemy, platform) {
     if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width) || enemy.body.velocity.x < 0 && enemy.x < platform.x) {
