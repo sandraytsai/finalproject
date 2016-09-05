@@ -13,3 +13,9 @@ weaponDirection = function() {
     weapon.bulletSpeed = 600;
   }
 }
+
+weaponFire = function() {
+  if (fireButton.isDown) {
+    weapon.fire();
+  };
+}

@@ -105,22 +105,16 @@ theGame.prototype = {
       player.frame = 0;
     };
 
-    if (fireButton.isDown) {
-      weapon.fire();
-    };
-
     if (health <= 0) {
       health = 10;
       points = 0;
-      this.game.state.start("Game");
+      player.kill();
+      this.add.image(300, 300, 'pinkblock');
+      this.add.button(350, 350,"bullet", this.restartGame,this)
     };
 
-    if (player.body.onFloor()) {
-      player.y=0;
-      health -= 1;
-      healthText.text = 'Health:' + health;
-    };
-
+    playerFalls();
+    weaponFire();
     weaponDirection();
 
   },
@@ -153,4 +147,9 @@ theGame.prototype = {
     healthText.text = 'Health:' + health;
     player.y = 0
   },
+  restartGame: function() {
+    health = 10;
+    points = 0;
+    this.state.start("Game");
+  }
 }
