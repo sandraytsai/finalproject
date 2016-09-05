@@ -57,16 +57,16 @@ theGame2.prototype = {
     firstaid.body.gravity.y = 300;
     firstaid.body.bounce.y = 0.3;
 
-    player = this.add.sprite(5, this.world.centerY, 'player');
+    player = this.add.sprite(0, this.world.centerY, 'player');
 
     this.physics.arcade.enable(player);
 
     player.body.bounce.y = 0.2;
-    player.body.gravity.y = 100;
+    player.body.gravity.y = 200;
     player.body.collideWorldBounds = true;
 
-    player.animations.add('left', [0, 1], 10, true);
-    player.animations.add('right', [6,7,8,9], 1, true);
+    player.animations.add('left', [8,9,10], 6, true);
+    player.animations.add('right', [3,4,5], 6, true);
 
 
     weapon = this.add.weapon(30, 'bullet');
@@ -98,25 +98,25 @@ theGame2.prototype = {
 
     if (cursors.up.isDown && player.body.touching.down)
     {
-      player.body.velocity.y = -50;
+      player.body.velocity.y = -200;
     }
 
     if (cursors.left.isDown)
     {
-      player.body.velocity.x = -500;
+      player.body.velocity.x = -200;
       player.animations.play('left');
 
     }
     else if (cursors.right.isDown)
     {
-      player.body.velocity.x = 500;
+      player.body.velocity.x = 200;
       player.animations.play('right');
     }
     else
     {
         //  Stand still
       player.animations.stop();
-      player.frame = 2;
+      player.frame = 0;
     }
 
     if (fireButton.isDown)

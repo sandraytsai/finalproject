@@ -18,7 +18,7 @@ preload.prototype = {
     this.load.image('bullet', 'assets/star.png');
     this.load.image('firstaid', 'assets/firstaid.png');
     // Below --- 32 * 32 is the pixel size of one frame
-    this.load.spritesheet('player', 'assets/megaman2_54.png', 36, 36);
+    this.load.spritesheet('player', 'assets/megaman2_14f.png', 35, 32);
   },
 
 
