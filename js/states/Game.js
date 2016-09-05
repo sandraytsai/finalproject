@@ -119,7 +119,10 @@ theGame.prototype = {
       player.y=0;
       health -= 1;
       healthText.text = 'Health:' + health;
-    }
+    };
+
+    weaponDirection();
+
   },
   collectDiamonds: function(player, diamond) {
     diamond.kill();
