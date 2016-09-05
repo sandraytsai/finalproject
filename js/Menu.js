@@ -1,15 +1,15 @@
-var menu = function(game){
+var menu = function(game) {
   console.log("game menu")
-}
+};
 
 menu.prototype = {
   create: function(){
     var background = this.game.add.tileSprite(0, 0, 5000, 1920, 'background');
     var title = this.game.add.sprite(this.world.centerX-60,100,"pinkblock");
-    var playButton = this.game.add.button(this.world.centerX-12,320,"bullet",this.playGame,this);
+    var playButton = this.game.add.button(this.world.centerX-12,320,"bullet",this.playIntro,this);
   },
-  playGame: function(){
+  playIntro: function(){
     console.log("playgame called");
-    this.game.state.start("Game");
+    this.game.state.start("Intro");
   } 
 }

@@ -43,22 +43,22 @@ theGame.prototype = {
     enemies.enableBody = true;
     
     var enemy = this.add.sprite(450, 5, 'enemy');
-    createEnemy(enemy)
+    createEnemy(enemy);
 
     var enemy = this.add.sprite(600, 5, 'enemy');
-    createEnemy(enemy)
+    createEnemy(enemy);
 
     var enemy = this.add.sprite(900, 5, 'enemy');
-    createEnemy(enemy)
+    createEnemy(enemy);
 
     var enemy = this.add.sprite(1200, 5, 'enemy');
-    createEnemy(enemy)
+    createEnemy(enemy);
 
     var enemy = this.add.sprite(1400, 5, 'enemy');
-    createEnemy(enemy)
+    createEnemy(enemy);
 
     var enemy = this.add.sprite(1600, 5, 'enemy');
-    createEnemy(enemy)
+    createEnemy(enemy);
 
     // weapon
     weapon = this.add.weapon(5, 'bullet');
@@ -127,12 +127,13 @@ theGame.prototype = {
     pointText.text = 'Points:' + points; 
   },
   collectFirstaids: function(player, firstaid){
-    var block = this.add.image(700, 180, 'pinkblock');
+    var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
     weapon.resetShots();
   },
   attackEnemy: function(weapon, enemy) {
-    enemy.kill()
+    enemy.kill();
+    weapon.kill();  
   },
   moveEnemy: function(enemy, platform) {
     if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width) || enemy.body.velocity.x < 0 && enemy.x < platform.x) {
