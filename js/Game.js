@@ -18,7 +18,7 @@ theGame.prototype = {
     createPlatforms();
 
     // var ground = platforms.create(0, this.world.height - 62, 'ground');
-    // //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 1920/400 = 4.8 
+    // //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 1920/400 = 4.8
     // ground.scale.setTo(12.5, 2);
     // //  This stops it from falling away when you jump on it
     // ground.body.immovable = true;
@@ -26,14 +26,14 @@ theGame.prototype = {
     // diamonds = 'points' to collect
     diamonds = this.add.group();
     diamonds.enableBody = true;
-    createDiamonds(); 
+    createDiamonds();
 
     // firstaids
     firstaids = this.add.group();
     firstaids.enableBody = true;
     createFirstaids();
 
-    // player 
+    // player
     player = this.add.sprite(5, 5, 'player');
     this.physics.arcade.enable(player);
     createPlayer(player);
@@ -41,7 +41,7 @@ theGame.prototype = {
     // enemies
     enemies = this.add.group();
     enemies.enableBody = true;
-    
+
     var enemy = this.add.sprite(450, 5, 'enemy');
     createEnemy(enemy)
 
@@ -102,7 +102,7 @@ theGame.prototype = {
       player.animations.play('right');
     } else {
       player.animations.stop();
-      player.frame = 2;
+      player.frame = 0;
     };
 
     if (fireButton.isDown) {
@@ -123,8 +123,8 @@ theGame.prototype = {
   },
   collectDiamonds: function(player, diamond) {
     diamond.kill();
-    points += 1; 
-    pointText.text = 'Points:' + points; 
+    points += 1;
+    pointText.text = 'Points:' + points;
   },
   collectFirstaids: function(player, firstaid){
     var block = this.add.image(700, 180, 'pinkblock');
