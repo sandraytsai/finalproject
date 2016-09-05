@@ -14,7 +14,8 @@ preload.prototype = {
     this.load.image('bullet', 'assets/star.png');
     this.load.image('firstaid', 'assets/firstaid.png');
     // 32 * 32 is the pixel size of one frame
-    this.load.spritesheet('player', 'assets/baddie.png', 32, 32);
+    this.load.spritesheet('player', 'assets/player.png', 32, 32);
+    this.load.spritesheet('enemy', 'assets/dude.png', 32, 48)
   },
   create: function(){
     console.log(this)

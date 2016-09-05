@@ -5,19 +5,18 @@
     <script src="js/Boot.js"></script>
     <script src="js/Preload.js"></script>
     <script src="js/Menu.js"></script>
-    <script src="js/Game1.js"></script>
-    <script src="js/Game2.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/Player.js"></script>
         <style>
-          body{margin:0}
+          body{margin:0;}
         </style>
     <script>
-      (function() {
+      (function() { 
         var game = new Phaser.Game(800, 600, Phaser.AUTO, "game");
         game.state.add("Boot",boot);
         game.state.add("Preload",preload);
         game.state.add("Menu",menu);
-        game.state.add("Game1",theGame1);
-        game.state.add("Game2",theGame2);
+        game.state.add("Game",theGame);
         game.state.start("Boot");
       })();    
     </script>
