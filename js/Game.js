@@ -9,86 +9,60 @@ theGame.prototype = {
   create: function(){
     console.log(this)
     // (origin, origin, width, height)
-    this.add.tileSprite(0, 0, 1920, 600, 'background');
-    this.world.setBounds(0, 0, 1920, 600);
+    this.add.tileSprite(0, 0, 5000, 600, 'background');
+    this.world.setBounds(0, 0, 5000, 600);
 
    //  platform group- includes ground and ledges
     platforms = this.add.group();
     platforms.enableBody = true;
-    var ground = platforms.create(0, this.world.height - 62, 'ground');
-    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 1920/400 = 4.8 
-    ground.scale.setTo(4.8, 2);
-    //  This stops it from falling away when you jump on it
-    ground.body.immovable = true;
+    createPlatforms();
 
-    var ledge = platforms.create(400, 400, 'ground');
-    ledge.body.immovable = true;
+    // var ground = platforms.create(0, this.world.height - 62, 'ground');
+    // //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 1920/400 = 4.8 
+    // ground.scale.setTo(12.5, 2);
+    // //  This stops it from falling away when you jump on it
+    // ground.body.immovable = true;
 
-    var ledge = platforms.create(-150, 200, 'ground');
-    ledge.body.immovable = true;
-
-    var ledge = platforms.create(700, 300, 'ground');
-    ledge.body.immovable = true;
-
-    var ledge = platforms.create(800, 500, 'ground');
-    ledge.body.immovable = true;
-
-    var ledge = platforms.create(1000, 200, 'ground');
-    ledge.body.immovable = true;
-
-    var ledge = platforms.create(1200, 400, 'ground');
-    ledge.body.immovable = true;
-
-    var ledge = platforms.create(1500, 300, 'ground');
-    ledge.body.immovable = true;
-
-
-    // diamonds = 'points'/ things to kill
+    // diamonds = 'points' to collect
     diamonds = this.add.group();
     diamonds.enableBody = true;
-    // made global so able to kill
-    diamond = diamonds.create(400, 0, 'diamond');
-    diamond.body.gravity.y = 300; 
-    diamond.body.bounce.y = 0.3;
+    createDiamonds(); 
 
     // firstaids
-    firstaids = this.add.group()
+    firstaids = this.add.group();
     firstaids.enableBody = true;
-
-    var firstaid = firstaids.create(800, 0, 'firstaid');
-    firstaid.body.gravity.y = 300;
-    firstaid.body.bounce.y = 0.3;
+    createFirstaids();
 
     // player 
-    player = this.add.sprite(5, this.world.centerY, 'player');
+    player = this.add.sprite(5, 5, 'player');
     this.physics.arcade.enable(player);
+    createPlayer(player);
 
-    player.body.bounce.y = 0.2;
-    player.body.gravity.y = 300;
-    player.body.collideWorldBounds = true;
+    // enemies
+    enemies = this.add.group();
+    enemies.enableBody = true;
+    
+    var enemy = this.add.sprite(450, 5, 'enemy');
+    createEnemy(enemy)
 
-    player.animations.add('left', [0, 1], 10, true);
-    player.animations.add('right', [2, 3], 10, true);
+    var enemy = this.add.sprite(600, 5, 'enemy');
+    createEnemy(enemy)
 
-    // enemy
-    enemy = this.add.sprite(450, 300, 'enemy');
-    this.physics.arcade.enable(enemy);
-    enemy.body.velocity.x = -50
-    enemy.body.bounce.y = 0.2;
-    enemy.body.gravity.y = 300;
-    enemy.body.collideWorldBounds = true;
+    var enemy = this.add.sprite(900, 5, 'enemy');
+    createEnemy(enemy)
 
-    enemy.animations.add('left', [0, 1, 2, 3], 10, true);
-    enemy.animations.add('right', [5, 6, 7, 8], 10, true);
+    var enemy = this.add.sprite(1200, 5, 'enemy');
+    createEnemy(enemy)
+
+    var enemy = this.add.sprite(1400, 5, 'enemy');
+    createEnemy(enemy)
+
+    var enemy = this.add.sprite(1600, 5, 'enemy');
+    createEnemy(enemy)
 
     // weapon
-    weapon = this.add.weapon(30, 'bullet');
-    weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
-    weapon.bulletSpeed = 600;
-    weapon.fireRate = 100;
-
-    weapon.trackSprite(player, 40, 10, true);
-
+    weapon = this.add.weapon(5, 'bullet');
+    createWeapon();
 
     pointText = this.add.text(16, 16, 'Points: ' + points, { fontSize: '32px', fill: '#000' });
     pointText.fixedToCamera = true;
@@ -105,14 +79,14 @@ theGame.prototype = {
   },
   update: function(){
     this.physics.arcade.collide(player, platforms);
-    this.physics.arcade.collide(enemy, platforms, this.moveEnemy);
+    this.physics.arcade.collide(enemies, platforms, this.moveEnemy);
     this.physics.arcade.collide(diamonds, platforms);
     this.physics.arcade.collide(firstaids, platforms);
 
     this.physics.arcade.overlap(player, diamonds, this.collectDiamonds, null, this)
     this.physics.arcade.overlap(player, firstaids, this.collectFirstaids, null, this)
-    this.physics.arcade.overlap(weapon.bullets, enemy, this.attackEnemy, null, this)
-    this.physics.arcade.overlap(player, enemy, this.decreaseHealth);
+    this.physics.arcade.overlap(weapon.bullets, enemies, this.attackEnemy, null, this)
+    this.physics.arcade.overlap(player, enemies, this.decreaseHealth);
 
     player.body.velocity.x = 0;
 
@@ -140,16 +114,24 @@ theGame.prototype = {
       points = 0;
       this.game.state.start("Game");
     };
+
+    if (player.body.onFloor()) {
+      player.y=0;
+      health -= 1;
+      healthText.text = 'Health:' + health;
+    }
   },
   collectDiamonds: function(player, diamond) {
     diamond.kill();
     points += 1; 
     pointText.text = 'Points:' + points; 
   },
-  collectFirstaids: function(game){
+  collectFirstaids: function(player, firstaid){
     var block = this.add.image(700, 180, 'pinkblock');
+    firstaid.kill();
+    weapon.resetShots();
   },
-  attackEnemy: function(enemy, weapon) {
+  attackEnemy: function(weapon, enemy) {
     enemy.kill()
   },
   moveEnemy: function(enemy, platform) {
@@ -165,6 +147,6 @@ theGame.prototype = {
   decreaseHealth: function(player, enemy) {
     health -= 2;
     healthText.text = 'Health:' + health;
-    player.x -= 300
-  }
+    player.y = 0
+  },
 }
