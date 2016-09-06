@@ -7,8 +7,13 @@ preload.prototype = {
     var loadingBar = this.add.sprite(160,240,"loading");
     loadingBar.anchor.setTo(0.5,0.5);
     this.load.setPreloadSprite(loadingBar);
-    this.load.image('background','assets/background.jpg');
+    this.load.image('background','assets/b_12800x600.jpeg');
     this.load.image('ground', 'assets/platform.png');
+    this.load.image('200x400', 'assets/p200x400.png');
+    this.load.image('50x200', 'assets/p50x200.png');
+    this.load.image('50x300', 'assets/p50x300.png');
+    this.load.image('600x50', 'assets/p600x50.png');
+    this.load.image('700x200', 'assets/p700x200.png');
     this.load.image('pinkblock', 'assets/pinkblock.jpg');
     this.load.image('diamond', 'assets/diamond.png');
     this.load.image('bullet', 'assets/star.png');

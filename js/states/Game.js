@@ -4,24 +4,25 @@ var theGame = function(game){
 
 var points = 0;
 var health = 10;
+var bullets = 5;
 
 theGame.prototype = {
   create: function(){
     console.log(this)
     // (origin, origin, width, height)
-    this.add.tileSprite(0, 0, 5000, 600, 'background');
-    this.world.setBounds(0, 0, 5000, 600);
+    this.add.tileSprite(0, 0, 12800, 600, 'background');
+    this.world.setBounds(0, 0, 12800, 600);
 
    //  platform group- includes ground and ledges
     platforms = this.add.group();
     platforms.enableBody = true;
     createPlatforms();
 
-    // var ground = platforms.create(0, this.world.height - 62, 'ground');
-    // //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 1920/400 = 4.8
-    // ground.scale.setTo(12.5, 2);
-    // //  This stops it from falling away when you jump on it
-    // ground.body.immovable = true;
+    var ground = platforms.create(0, this.world.height - 62, 'ground');
+    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 1920/400 = 4.8
+    ground.scale.setTo(32, 2);
+    //  This stops it from falling away when you jump on it
+    ground.body.immovable = true;
 
     // diamonds = 'points' to collect
     diamonds = this.add.group();
@@ -61,14 +62,17 @@ theGame.prototype = {
     createEnemy(enemy);
 
     // weapon
-    weapon = this.add.weapon(5, 'bullet');
+    weapon = this.add.weapon(10, 'bullet');
     createWeapon();
 
-    pointText = this.add.text(16, 16, 'Points: ' + points, { fontSize: '32px', fill: '#000' });
+    pointText = this.add.text(15, 15, 'Points: ' + points, { fontSize: '32px', fill: '#000' });
     pointText.fixedToCamera = true;
 
-    healthText = this.add.text(16, 40, 'Health: ' + health, { fontSize: '32px', fill: '#000' });
+    healthText = this.add.text(15, 40, 'Health: ' + health, { fontSize: '32px', fill: '#000' });
     healthText.fixedToCamera = true;
+
+    bulletText = this.add.text(15, 65, 'Bullets: ' + bullets, { fontSize: '32px', fill: '#000' });
+    bulletText.fixedToCamera = true;
 
     cursors = this.input.keyboard.createCursorKeys();
 
@@ -106,11 +110,9 @@ theGame.prototype = {
     };
 
     if (health <= 0) {
-      health = 10;
-      points = 0;
+      this.add.image(player.x-200, 400, 'pinkblock');
+      this.add.button(player.x-150, 400,"bullet", this.restartGame,this);
       player.kill();
-      this.add.image(300, 300, 'pinkblock');
-      this.add.button(350, 350,"bullet", this.restartGame,this)
     };
 
     playerFalls();
@@ -127,6 +129,8 @@ theGame.prototype = {
     var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
     weapon.resetShots();
+    bullets = 5;
+    bulletText.text = 'Bullets:' + bullets;
   },
   attackEnemy: function(weapon, enemy) {
     enemy.kill();

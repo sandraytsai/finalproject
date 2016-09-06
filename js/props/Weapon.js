@@ -1,7 +1,12 @@
 createWeapon = function() {
-  weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
-  weapon.fireRate = 100;
+  weapon.bulletKillType = Phaser.Weapon.KILL_DISTANCE;
+  weapon.bulletKillDistance = 800;
+  weapon.fireRate = 500;
   weapon.fireLimit = 5;
+  weapon.onFire.add(function(){
+    bullets -= 1;
+    bulletText.text = 'Bullets:' + bullets;
+  });
 }
 
 weaponDirection = function() {

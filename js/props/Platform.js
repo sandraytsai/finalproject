@@ -1,50 +1,13 @@
-createPlatforms = function(){
-  var ledge = platforms.create(400, 400, 'ground');
-  ledge.body.immovable = true;
+createPlatforms = function() {
+  createPlatform(0, 300 , '50x300');
+  createPlatform(400, 400, 'ground');
+  createPlatform(700, 300, 'ground');
+  createPlatform(1000, 200, 'ground');
+  createPlatform(1200, 400, 'ground');
+  createPlatform(1500, 300, 'ground');
+};
 
-  var ledge = platforms.create(-100, 200, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(700, 300, 'ground');
+createPlatform = function(x, y, platformType) {
+  var ledge = platforms.create(x, y, platformType);
   ledge.body.immovable = true; 
-
-  var ledge = platforms.create(1000, 200, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(1200, 400, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(1500, 300, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(1850, 200, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(2050, 450, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(2200, 80, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(2400, 300, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(2800, 430, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(3050, 270, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(3200, 100, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(3400, 450, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(3550, 200, 'ground');
-  ledge.body.immovable = true;
-
-  var ledge = platforms.create(3800, 300, 'ground');
-  ledge.body.immovable = true;
-
-}
+};
