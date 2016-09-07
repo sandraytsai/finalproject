@@ -21,6 +21,7 @@ preload.prototype = {
     this.load.spritesheet('enemy', 'assets/dude.png', 32, 48);
     this.load.audio('shoot', 'assets/audio/Strong_Punch.mp3');
     this.load.audio('jump', 'assets/audio/Mario_Jumping.mp3');
+    this.load.audio('bgmusic', 'assets/audio/backgroundmusic.wav');
   },
   create: function(){
     this.game.state.start("Menu");
