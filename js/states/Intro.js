@@ -2,6 +2,7 @@ var intro = function(game){
   console.log("intro animation");
 };
 
+
 intro.prototype = {
   create: function(){
     var background = this.game.add.tileSprite(0, 0, 5000, 1920, 'background');
@@ -15,12 +16,16 @@ intro.prototype = {
     // animation goes here
     setTimeout(function() {
       gameself.game.state.start("Game");
-    }, 9000)
+    }, 8000);
+    playButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
   },
 
   update: function(){
     if (player.x > 720) {
       player.kill();
+    };
+    if (playButton.isDown) {
+      this.game.state.start("Game");
     };
   }
 };
