@@ -1,5 +1,4 @@
 var intro = function(game){
-  console.log("intro animation");
 };
 
 intro.prototype = {

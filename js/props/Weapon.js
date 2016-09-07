@@ -1,4 +1,5 @@
 createWeapon = function() {
+  weapon = this.add.weapon(10, 'bullet');
   weapon.bulletKillType = Phaser.Weapon.KILL_DISTANCE;
   weapon.bulletKillDistance = 800;
   weapon.fireRate = 250;

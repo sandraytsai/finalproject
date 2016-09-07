@@ -1,6 +1,5 @@
 var preload = function(game){
-  console.log("game preloading")
-}
+};
 
 preload.prototype = {
   preload: function(){
@@ -23,7 +22,6 @@ preload.prototype = {
     this.load.spritesheet('enemy', 'assets/dude.png', 32, 48)
   },
   create: function(){
-    console.log(this)
     this.game.state.start("Menu");
   }
 }

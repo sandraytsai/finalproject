@@ -1,4 +1,6 @@
 createDiamonds = function() {
+  diamonds = this.add.group();
+  diamonds.enableBody = true;
   createDiamond(400, 0);
   createDiamond(600, 0);
   createDiamond(800, 0);

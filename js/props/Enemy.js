@@ -1,4 +1,6 @@
 createEnemies= function() {
+  enemies = this.add.group();
+  enemies.enableBody = true;
   createEnemy.apply(this, [450, 5, 'enemy']);
   createEnemy.apply(this, [600, 5, 'enemy']);
   createEnemy.apply(this, [900, 5, 'enemy']);
@@ -8,7 +10,6 @@ createEnemies= function() {
 }
 
 createEnemy= function(x, y, enemy) {
-
   var enemy = this.add.sprite(x, y, enemy);
   enemies.add(enemy);
   enemy.body.velocity.x = -50;

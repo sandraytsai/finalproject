@@ -1,5 +1,4 @@
 var menu = function(game) {
-  console.log("game menu")
 };
 
 menu.prototype = {
@@ -9,7 +8,6 @@ menu.prototype = {
     var playButton = this.game.add.button(this.world.centerX-12,320,"bullet",this.playIntro,this);
   },
   playIntro: function(){
-    console.log("playgame called");
     this.game.state.start("Intro");
   } 
 }
