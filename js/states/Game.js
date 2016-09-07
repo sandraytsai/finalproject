@@ -42,24 +42,8 @@ theGame.prototype = {
     // enemies
     enemies = this.add.group();
     enemies.enableBody = true;
-
-    var enemy = this.add.sprite(450, 5, 'enemy');
-    createEnemy(enemy);
-
-    var enemy = this.add.sprite(600, 5, 'enemy');
-    createEnemy(enemy);
-
-    var enemy = this.add.sprite(900, 5, 'enemy');
-    createEnemy(enemy);
-
-    var enemy = this.add.sprite(1200, 5, 'enemy');
-    createEnemy(enemy);
-
-    var enemy = this.add.sprite(1400, 5, 'enemy');
-    createEnemy(enemy);
-
-    var enemy = this.add.sprite(1600, 5, 'enemy');
-    createEnemy(enemy);
+    var createEnemies = window.createEnemies.bind(this);
+    createEnemies();
 
     // weapon
     weapon = this.add.weapon(10, 'bullet');
@@ -81,6 +65,7 @@ theGame.prototype = {
     this.camera.follow(player);
 
   },
+  
   update: function(){
     this.physics.arcade.collide(player, platforms);
     this.physics.arcade.collide(enemies, platforms, this.moveEnemy);

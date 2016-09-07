@@ -2,7 +2,6 @@ var intro = function(game){
   console.log("intro animation");
 };
 
-
 intro.prototype = {
   create: function(){
     var background = this.game.add.tileSprite(0, 0, 5000, 1920, 'background');
@@ -10,22 +9,22 @@ intro.prototype = {
     player = this.game.add.sprite(5, 770, 'player');
     this.physics.arcade.enable(player);
     createPlayer(player);
-    player.body.velocity.x = 100;
+    player.body.velocity.x = 300;
     player.animations.play('right');
     var gameself = this
     // animation goes here
     setTimeout(function() {
       gameself.game.state.start("Game");
-    }, 8000);
-    playButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+    }, 3000);
+    // playButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
   },
 
   update: function(){
     if (player.x > 720) {
       player.kill();
     };
-    if (playButton.isDown) {
-      this.game.state.start("Game");
-    };
+    // if (playButton.isDown) {
+    //   this.game.state.start("Game");
+    // };
   }
 };
