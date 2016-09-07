@@ -17,9 +17,10 @@ preload.prototype = {
     this.load.image('diamond', 'assets/diamond.png');
     this.load.image('bullet', 'assets/star.png');
     this.load.image('firstaid', 'assets/firstaid.png');
-    // 32 * 32 is the pixel size of one frame
     this.load.spritesheet('player', 'assets/megaman2_14f.png', 35, 32);
-    this.load.spritesheet('enemy', 'assets/dude.png', 32, 48)
+    this.load.spritesheet('enemy', 'assets/dude.png', 32, 48);
+    this.load.audio('shoot', 'assets/audio/Strong_Punch.mp3');
+    this.load.audio('jump', 'assets/audio/Mario_Jumping.mp3');
   },
   create: function(){
     this.game.state.start("Menu");

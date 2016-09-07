@@ -7,11 +7,12 @@ var bullets = 5;
 
 theGame.prototype = {
   create: function(){
-    // (origin, origin, width, height)
     this.add.tileSprite(0, 0, 12800, 600, 'background');
     this.world.setBounds(0, 0, 12800, 600);
 
-    // player
+    shoot = this.add.audio('shoot');
+    jump = this.add.audio('jump');
+
     player = this.add.sprite(5, 5, 'player');
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
@@ -49,6 +50,8 @@ theGame.prototype = {
     this.physics.arcade.overlap(player, enemies, this.decreaseHealth);
 
     playerMovement();
+    
+    player.bringToTop();
 
     if (health <= 0) {
       this.add.image(player.x-60, 200, 'pinkblock');

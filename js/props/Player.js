@@ -12,6 +12,7 @@ playerMovement = function() {
 
   if (cursors.up.isDown && player.body.touching.down) {
     player.body.velocity.y = -300;
+    jump.play();
   };
 
   if (cursors.left.isDown) {

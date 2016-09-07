@@ -7,6 +7,7 @@ createWeapon = function() {
   weapon.onFire.add(function(){
     bullets -= 1;
     bulletText.text = 'Bullets:' + bullets;
+    shoot.play();
   });
 }
 
