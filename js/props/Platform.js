@@ -17,6 +17,21 @@ createPlatform = function(x, y, platformType) {
 createGround = function() {
   var ground = platforms.create(0, this.world.height - 62, 'ground');
   //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
-  ground.scale.setTo(32, 2);
+  ground.scale.setTo(1, 2);
+  ground.body.immovable = true;
+
+  var ground = platforms.create(500, this.world.height - 62, 'ground');
+  //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
+  ground.scale.setTo(3, 2);
+  ground.body.immovable = true;
+
+  var ground = platforms.create(2000, this.world.height - 62, 'ground');
+  //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
+  ground.scale.setTo(3.25, 2);
+  ground.body.immovable = true;
+
+  var ground = platforms.create(3400, this.world.height - 62, 'ground');
+  //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
+  ground.scale.setTo(25, 2);
   ground.body.immovable = true;
 }

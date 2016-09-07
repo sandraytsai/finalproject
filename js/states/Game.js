@@ -61,7 +61,7 @@ theGame.prototype = {
       player.kill();
     };
 
-    // playerFalls();
+    playerFalls();
     weaponFire();
     weaponDirection();
 
@@ -69,14 +69,14 @@ theGame.prototype = {
   collectDiamonds: function(player, diamond) {
     diamond.kill();
     points += 1;
-    pointText.text = 'Points:' + points;
+    pointText.text = 'Points: ' + points;
   },
   collectFirstaids: function(player, firstaid){
     var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
     weapon.resetShots();
     bullets = 5;
-    bulletText.text = 'Bullets:' + bullets;
+    bulletText.text = 'Bullets: ' + bullets;
   },
   attackEnemy: function(weapon, enemy) {
     enemy.kill();
