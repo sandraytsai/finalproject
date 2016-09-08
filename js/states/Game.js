@@ -66,8 +66,7 @@ theGame.prototype = {
       player.kill();
     };
 
-    // win game -> to ending
-    if (player.body.x > 150) {
+    if (player.body.x > 12780) {
       this.state.start("Ending")
     }
 

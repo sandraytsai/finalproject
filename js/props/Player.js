@@ -67,7 +67,8 @@ playerMovement = function() {
 
 playerFalls = function() {
   if (player.body.onFloor()) {
-    health -= 1;
+    health -= 50;
+    greenhealth.scale.setTo(health/1000, 1);
     restartWeek(player); 
   };
 }
