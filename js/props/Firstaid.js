@@ -1,7 +1,6 @@
 createFirstaids= function() {
   firstaids = this.add.group();
   firstaids.enableBody = true;
-  createFirstaid(800, 0);
   createFirstaid(1150, 0);
   createFirstaid(1700, 0);
 };

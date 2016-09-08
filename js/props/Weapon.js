@@ -12,7 +12,7 @@ createWeapon = function() {
 }
 
 weaponDirection = function() {
-  if (player.body.velocity.x < 0) {
+  if (facing == 'left') {
     weapon.trackSprite(player, 0, 10, true);
     weapon.bulletSpeed = -600;
   } else {

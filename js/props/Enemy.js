@@ -3,10 +3,9 @@ createEnemies= function() {
   enemies.enableBody = true;
   createEnemy.apply(this, [450, 5, 'enemy']);
   createEnemy.apply(this, [600, 5, 'enemy']);
-  createEnemy.apply(this, [900, 5, 'enemy']);
-  createEnemy.apply(this, [1200, 5, 'enemy']);
-  createEnemy.apply(this, [1400, 5, 'enemy']);
-  createEnemy.apply(this, [1600, 5, 'enemy']);
+  createEnemy.apply(this, [1000, 300, 'enemy']);
+  createEnemy.apply(this, [1230, 400, 'enemy']);
+  createEnemy.apply(this, [1700, 5, 'enemy']);
 }
 
 createEnemy= function(x, y, enemy) {

@@ -1,31 +1,69 @@
 createPlayer = function() {
   player.body.bounce.y = 0.2;
-  player.body.gravity.y = 300;
+  player.body.gravity.y = 1200;
   player.body.collideWorldBounds = true;
+
+  facing = 'right';
 
   player.animations.add('left', [8,9,10,9], 6, true);
   player.animations.add('right', [3,4,5,4], 6, true);
+  player.animations.add('jumpleft', [7], 1, true); 
+  player.animations.add('jumpright', [6], 1, true); 
+
 };
 
 playerMovement = function() {
   player.body.velocity.x = 0;
 
-  if (cursors.up.isDown && player.body.touching.down) {
-    player.body.velocity.y = -300;
+  if (cursors.up.isDown && facing == 'left' ) {
+    player.animations.play('jumpleft');
     jump.play();
-  };
-
-  if (cursors.left.isDown) {
+    if ( player.body.touching.down ){
+      player.body.velocity.y = -500;
+    };
+    if (cursors.left.isDown) {
+      player.body.velocity.x = -200;
+    };
+    if (cursors.right.isDown) {
+      player.animations.play('jumpright');
+      player.body.velocity.x = 200;
+      facing =='right'
+    }
+  } else if (cursors.up.isDown && facing == 'right') {
+    player.animations.play('jumpright');
+    jump.play();
+    if ( player.body.touching.down ){
+      player.body.velocity.y = -500;
+    };
+    if (cursors.right.isDown) {
+      player.body.velocity.x = 200;
+    };
+    if (cursors.left.isDown) {
+      player.animations.play('jumpleft');
+      player.body.velocity.x = -200;
+      facing =='left'
+    }
+  } else if (cursors.left.isDown) {
     player.body.velocity.x = -200;
     player.animations.play('left');
+    if (facing != 'left') {
+      facing = 'left';
+    }
   } else if (cursors.right.isDown) {
     player.body.velocity.x = 200;
     player.animations.play('right');
+    if (facing != 'right') {
+      facing = 'right';
+    }
   } else {
     player.animations.stop();
-    player.frame = 0;
+    if (facing == 'left') {
+      player.frame = 13;
+    } else {
+      player.frame = 0;
+    }
   };
-}
+};
 
 playerFalls = function() {
   if (player.body.onFloor()) {

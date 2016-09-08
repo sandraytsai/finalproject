@@ -1,12 +1,21 @@
 createPlatforms = function() {
   platforms = this.add.group();
   platforms.enableBody = true;
-  createPlatform(0, 300 , '50x300');
-  createPlatform(400, 400, 'ground');
-  createPlatform(700, 300, 'ground');
-  createPlatform(1000, 200, 'ground');
-  createPlatform(1200, 400, 'ground');
-  createPlatform(1500, 300, 'ground');
+  createPlatform(300, 500, '1');
+  createPlatform(400, 450, '2');
+  createPlatform(500, 400, '4');
+  createPlatform(700, 400, '4');
+  createPlatform(800, 0, '7');
+  createPlatform(800, 300, '6');
+  createPlatform(900, 0, '8');
+  createPlatform(900, 400, '6');
+  createPlatform(1000, 350, '5');
+  createPlatform(1100, 0, '6');
+  createPlatform(1100, 450, '5');
+  createPlatform(1200, 0, '8');
+  createPlatform(1300, 200, '7');
+  createPlatform(1400, 0, '5');
+  createPlatform(1500, 400, '3');
 };
 
 createPlatform = function(x, y, platformType) {
@@ -15,23 +24,13 @@ createPlatform = function(x, y, platformType) {
 };
 
 createGround = function() {
-  var ground = platforms.create(0, this.world.height - 62, 'ground');
+  var ground = platforms.create(0, this.world.height - 50, '5');
   //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
-  ground.scale.setTo(1, 2);
+  ground.scale.setTo(1.75, 1);
   ground.body.immovable = true;
 
-  var ground = platforms.create(500, this.world.height - 62, 'ground');
+  var ground = platforms.create(400, this.world.height - 50, '5');
   //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
-  ground.scale.setTo(3, 2);
-  ground.body.immovable = true;
-
-  var ground = platforms.create(2000, this.world.height - 62, 'ground');
-  //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
-  ground.scale.setTo(3.25, 2);
-  ground.body.immovable = true;
-
-  var ground = platforms.create(3400, this.world.height - 62, 'ground');
-  //  Scale it to fit the width of the game (the original sprite is 400x32 in size)-> 12800/400 = 32
-  ground.scale.setTo(25, 2);
+  ground.scale.setTo(60.5, 1);
   ground.body.immovable = true;
 }

@@ -36,7 +36,7 @@ theGame.prototype = {
     cursors = this.input.keyboard.createCursorKeys();
     fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
-    this.camera.follow(player);
+    this.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
   },
   
@@ -45,6 +45,7 @@ theGame.prototype = {
     this.physics.arcade.collide(enemies, platforms, this.moveEnemy);
     this.physics.arcade.collide(diamonds, platforms);
     this.physics.arcade.collide(firstaids, platforms);
+    this.physics.arcade.collide(weapon.bullets, platforms, this.killBullet);
 
     this.physics.arcade.overlap(player, diamonds, this.collectDiamonds, null, this)
     this.physics.arcade.overlap(player, firstaids, this.collectFirstaids, null, this)
@@ -52,7 +53,7 @@ theGame.prototype = {
     this.physics.arcade.overlap(player, enemies, this.decreaseHealth);
 
     playerMovement();
-    
+
     player.bringToTop();
 
     if (health <= 0) {
@@ -64,6 +65,10 @@ theGame.prototype = {
     playerFalls();
     weaponFire();
     weaponDirection();
+
+
+        // this.input.onDown.addOnce(stopAnimation, this);
+
 
   },
   collectDiamonds: function(player, diamond) {
@@ -83,7 +88,7 @@ theGame.prototype = {
     weapon.kill();  
   },
   moveEnemy: function(enemy, platform) {
-    if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width) || enemy.body.velocity.x < 0 && enemy.x < platform.x) {
+    if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width-2) || enemy.body.velocity.x < 0 && enemy.x < platform.x+2) {
       enemy.body.velocity.x *= -1
     };
     if (enemy.body.velocity.x > 0) {
@@ -91,6 +96,9 @@ theGame.prototype = {
     } else {
       enemy.animations.play('left');
     };
+  },
+  killBullet: function(weapon, platform) {
+    weapon.kill();
   },
   decreaseHealth: function(player, enemy) {
     health -= 2;
