@@ -66,6 +66,11 @@ theGame.prototype = {
       player.kill();
     };
 
+    // win game -> to ending
+    if (player.body.x > 150) {
+      this.state.start("Ending")
+    }
+
     playerFalls();
     weaponFire();
     weaponDirection();

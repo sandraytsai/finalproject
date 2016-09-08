@@ -7,6 +7,7 @@
     <script src="js/states/Menu.js"></script>
     <script src="js/states/Intro.js"></script>
     <script src="js/states/Game.js"></script>
+    <script src="js/states/Ending.js"></script>
     <script src="js/props/Enemy.js"></script>
     <script src="js/props/Player.js"></script>
     <script src="js/props/Platform.js"></script>
@@ -25,6 +26,7 @@
           game.state.add("Menu",menu);
           game.state.add("Intro",intro);
           game.state.add("Game",theGame);
+          game.state.add("Ending",ending)
           game.state.start("Boot");
         })();    
       </script>
