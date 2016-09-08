@@ -1,7 +1,7 @@
 createEnemies= function() {
   enemies = this.add.group();
   enemies.enableBody = true;
-  createEnemy.apply(this, [450, 5, 'enemy1']);
+  createEnemy.apply(this, [470, 5, 'enemy1']);
   createEnemy.apply(this, [600, 5, 'enemy1']);
   createEnemy.apply(this, [1000, 300, 'enemy1']);
   createEnemy.apply(this, [1230, 400, 'enemy2']);

@@ -4,7 +4,7 @@ var intro = function(game){
 intro.prototype = {
   create: function(){
     var background = this.game.add.tileSprite(0, 0, 5000, 1920, 'background');
-    var block = this.add.image(700, 300, '50x300');
+    var block = this.add.image(700, 300, '7');
     player = this.game.add.sprite(5, 770, 'player');
     this.physics.arcade.enable(player);
     createPlayer(player);

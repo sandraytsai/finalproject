@@ -31,15 +31,12 @@ theGame.prototype = {
 
     createWeapon.apply(this);
 
-    createText.apply(this, [points, health, bullets])
+    createText.apply(this, [points])
+
+    playerStatus.apply(this, [health, bullets]);
 
     cursors = this.input.keyboard.createCursorKeys();
     fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
-
-    var redhealth = this.add.image(5, 5, 'redhealth');
-    redhealth.fixedToCamera = true;
-    greenhealth = this.add.image(5, 5, 'greenhealth');
-    greenhealth.fixedToCamera = true;
 
     this.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
@@ -62,8 +59,10 @@ theGame.prototype = {
     player.bringToTop();
 
     if (health <= 0) {
-      this.add.image(player.x-60, 200, 'pinkblock');
-      this.add.button(player.x, 250,"bullet", this.restartGame,this);
+      var gameoverbutton = this.add.image(330, 200, 'pinkblock');
+      gameoverbutton.fixedToCamera = true;
+      var gameoverscreen = this.add.button(390, 250,"bullet", this.restartGame,this);
+      gameoverscreen.fixedToCamera = true;
       player.kill();
     };
 
@@ -76,23 +75,22 @@ theGame.prototype = {
   collectDiamonds: function(player, diamond) {
     diamond.kill();
     points += 1;
-    if (health > 950) {
-      health = 1000
-    } else {
-      health += 50;
-    }
-    greenhealth.scale.setTo(health/1000, 1);
+    bullets = 5;
+    greenbullets.scale.setTo(bullets/5, 1);
     pointText.text = 'Points: ' + points;
   },
   collectFirstaids: function(player, firstaid){
     var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
     weapon.resetShots();
-    bullets = 5;
-    bulletText.text = 'Bullets: ' + bullets;
+    if (health > 900) {
+      health = 1000
+    } else {
+      health += 100;
+    }
+    greenhealth.scale.setTo(health/1000, 1);
   },
   attackEnemy: function(weapon, enemy) {
-    console.log(enemy.health)
     enemy.health -= 1;
     weapon.kill();  
     if (enemy.health == 0) {
@@ -103,6 +101,7 @@ theGame.prototype = {
     if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width-2) || enemy.body.velocity.x < 0 && enemy.x < platform.x+2) {
       enemy.body.velocity.x *= -1
     };
+
     if (enemy.body.velocity.x > 0) {
       enemy.animations.play('right');
     } else {

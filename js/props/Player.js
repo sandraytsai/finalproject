@@ -27,7 +27,7 @@ playerMovement = function() {
     if (cursors.right.isDown) {
       player.animations.play('jumpright');
       player.body.velocity.x = 200;
-      facing =='right'
+      facing ='right'
     }
   } else if (cursors.up.isDown && facing == 'right') {
     player.animations.play('jumpright');
@@ -41,7 +41,7 @@ playerMovement = function() {
     if (cursors.left.isDown) {
       player.animations.play('jumpleft');
       player.body.velocity.x = -200;
-      facing =='left'
+      facing ='left'
     }
   } else if (cursors.left.isDown) {
     player.body.velocity.x = -200;
@@ -68,7 +68,6 @@ playerMovement = function() {
 playerFalls = function() {
   if (player.body.onFloor()) {
     health -= 1;
-    healthText.text = 'Health:' + health;
     restartWeek(player); 
   };
 }
