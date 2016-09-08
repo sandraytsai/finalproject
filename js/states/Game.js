@@ -2,7 +2,7 @@ var theGame = function(game){
 };
 
 var points = 0;
-var health = 10;
+var health = 1000;
 var bullets = 5;
 
 theGame.prototype = {
@@ -35,6 +35,11 @@ theGame.prototype = {
 
     cursors = this.input.keyboard.createCursorKeys();
     fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
+
+    var redhealth = this.add.image(5, 5, 'redhealth');
+    redhealth.fixedToCamera = true;
+    greenhealth = this.add.image(5, 5, 'greenhealth');
+    greenhealth.fixedToCamera = true;
 
     this.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
@@ -71,6 +76,12 @@ theGame.prototype = {
   collectDiamonds: function(player, diamond) {
     diamond.kill();
     points += 1;
+    if (health > 950) {
+      health = 1000
+    } else {
+      health += 50;
+    }
+    greenhealth.scale.setTo(health/1000, 1);
     pointText.text = 'Points: ' + points;
   },
   collectFirstaids: function(player, firstaid){
@@ -103,8 +114,7 @@ theGame.prototype = {
   },
   decreaseHealth: function(player, enemy) {
     health -= 2;
-    healthText.text = 'Health:' + health;
-    player.y = 0
+    greenhealth.scale.setTo(health/1000, 1);
   },
   restartGame: function() {
     health = 10;

@@ -17,6 +17,9 @@ preload.prototype = {
     this.load.image('7', 'assets/platforms/block_seven.png');
     this.load.image('8', 'assets/platforms/block_eight.png');
 
+    this.load.image('redhealth', 'assets/red-25-100.png');
+    this.load.image('greenhealth', 'assets/green-25-100.png');
+
     this.load.image('ground', 'assets/platform.png');
     this.load.image('200x400', 'assets/p200x400.png');
     this.load.image('50x200', 'assets/p50x200.png');
