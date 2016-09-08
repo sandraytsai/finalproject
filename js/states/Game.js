@@ -66,10 +66,7 @@ theGame.prototype = {
     weaponFire();
     weaponDirection();
 
-
-        // this.input.onDown.addOnce(stopAnimation, this);
-
-
+    // this.input.onDown.addOnce(stopAnimation, this);
   },
   collectDiamonds: function(player, diamond) {
     diamond.kill();
@@ -84,8 +81,12 @@ theGame.prototype = {
     bulletText.text = 'Bullets: ' + bullets;
   },
   attackEnemy: function(weapon, enemy) {
-    enemy.kill();
+    console.log(enemy.health)
+    enemy.health -= 1;
     weapon.kill();  
+    if (enemy.health == 0) {
+      enemy.kill();
+    } 
   },
   moveEnemy: function(enemy, platform) {
     if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width-2) || enemy.body.velocity.x < 0 && enemy.x < platform.x+2) {
