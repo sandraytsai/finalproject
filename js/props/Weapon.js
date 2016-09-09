@@ -6,7 +6,6 @@ createWeapon = function() {
   weapon.fireLimit = 5;
   weapon.onFire.add(function(){
     bullets -= 1;
-    greenbullets.scale.setTo(bullets/5, 1);
     shoot.play();
   });
 }

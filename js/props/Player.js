@@ -67,13 +67,16 @@ playerMovement = function() {
 
 playerFalls = function() {
   if (player.body.onFloor()) {
-    health -= 50;
-    greenhealth.scale.setTo(health/1000, 1);
+    health -= 100;
     restartWeek(player); 
   };
 }
 
-restartWeek= function(player) {
+restartWeek = function(player) {
+  health = 1000;
+  bullets = 5;
+  weapon.resetShots();
+
   if ( player.x <= 1600) {
     player.x = 5;
     player.y = 0;
@@ -102,4 +105,27 @@ restartWeek= function(player) {
     player.x = 11205;
     player.y = 0;
   };
+}
+
+gameOver = function() {
+  if (health <= 0) {
+    var gameoverbutton = this.add.image(330, 200, 'pinkblock');
+    gameoverbutton.fixedToCamera = true;
+    var gameoverscreen = this.add.button(390, 250,"bullet", this.restartGame,this);
+    gameoverscreen.fixedToCamera = true;
+    player.kill();
+
+    health = 1000;
+    bullets = 5;
+    weapon.resetShots();
+  };
+}
+
+winGame = function() {
+  if (player.body.x > 12750) {
+    this.state.start("Ending");
+    health = 1000;
+    bullets = 5;
+    weapon.resetShots();
+  }
 }

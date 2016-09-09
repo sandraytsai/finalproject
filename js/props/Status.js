@@ -19,3 +19,17 @@ playerStatus = function(health, bullets) {
   greenbullets = this.add.image(35, 50, 'greenhealth');
   greenbullets.fixedToCamera = true;
 }
+
+bulletStatus = function() {
+  if (bullets < 0) {
+    bullets = 0;
+  };
+  greenbullets.scale.setTo(bullets/5, 1);
+}
+
+healthStatus = function() {
+  if (health < 0 ) {
+    health = 0;
+  };
+  greenhealth.scale.setTo(health/1000, 1);
+}

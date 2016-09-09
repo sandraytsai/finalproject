@@ -54,45 +54,36 @@ theGame.prototype = {
     this.physics.arcade.overlap(weapon.bullets, enemies, this.attackEnemy, null, this)
     this.physics.arcade.overlap(player, enemies, this.decreaseHealth);
 
-    playerMovement();
-
     player.bringToTop();
 
-    if (health <= 0) {
-      var gameoverbutton = this.add.image(330, 200, 'pinkblock');
-      gameoverbutton.fixedToCamera = true;
-      var gameoverscreen = this.add.button(390, 250,"bullet", this.restartGame,this);
-      gameoverscreen.fixedToCamera = true;
-      player.kill();
-    };
+    bulletStatus();
+    healthStatus();
 
-    if (player.body.x > 12780) {
-      this.state.start("Ending")
-    }
-
+    playerMovement();
     playerFalls();
+
     weaponFire();
     weaponDirection();
+    
+    gameOver.apply(this);
+    winGame.apply(this);
 
-    // this.input.onDown.addOnce(stopAnimation, this);
   },
   collectDiamonds: function(player, diamond) {
     diamond.kill();
     points += 1;
+    weapon.resetShots();
     bullets = 5;
-    greenbullets.scale.setTo(bullets/5, 1);
     pointText.text = 'Points: ' + points;
   },
   collectFirstaids: function(player, firstaid){
     var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
-    weapon.resetShots();
     if (health > 900) {
       health = 1000
     } else {
       health += 100;
     }
-    greenhealth.scale.setTo(health/1000, 1);
   },
   attackEnemy: function(weapon, enemy) {
     enemy.health -= 1;
@@ -117,11 +108,11 @@ theGame.prototype = {
   },
   decreaseHealth: function(player, enemy) {
     health -= 2;
-    greenhealth.scale.setTo(health/1000, 1);
   },
   restartGame: function() {
-    health = 10;
+    health = 1000;
     points = 0;
+    bullets = 5
     this.state.start("Game");
   }
 }
