@@ -46,10 +46,99 @@ createPlatforms = function() {
   createPlatform(4450, 450, '5');
   createPlatform(4700, 350, '1');
   // week4
+  createPlatform(4900, 350, '5');
+  createPlatform(5100, 350, '5');
+  createPlatform(5000, 400, '8');
+  createPlatform(5400, 0, '7');
+  createPlatform(5500, 300, '6');
+  createPlatform(5600, 300, '6');
+  createPlatform(5700, 350, '3');
+  createPlatform(5850, 450, '1');
+  createPlatform(5900, 250, '2');
+  createPlatform(5950, 400, '4');
+  createPlatform(6100, 400, '8');
+  createPlatform(6100, 200, '6');
+  createPlatform(6200, 250, '5');
   // week5
+  createGround(6400, 250, 3.5);
+  createGround(6400, 300, 3.5);
+  createPlatform(6400, 500, '6');
+  createPlatform(6600, 500, '6');
+  createPlatform(6800, 500, '6');
+  createPlatform(7000, 500, '6');
+  createPlatform(7300, 500, '6');
+  createPlatform(7500, 500, '6');
+  createPlatform(7700, 500, '6');
+  createPlatform(7900, 500, '6');
+  createGround(7200, 100, 4);
+  createGround(7200, 150, 4);
+  createGround(7200, 400, 4);
+  createGround(7200, 450, 4);
+  createPlatform(6400, 0, '6');
+  createPlatform(6600, 0, '6');
+  createPlatform(6800, 0, '6');
+  createPlatform(7000, 0, '6');
+  createPlatform(7300, 0, '6');
+  createPlatform(7500, 0, '6');
+  createPlatform(7700, 0, '6');
+  createPlatform(7900, 0, '6');
   // week6
+  createPlatform(8050, 50, '2');
+  createPlatform(8100, 10, '2');
+  createPlatform(8100, 450, '2');
+  createPlatform(8150, 500, '2');
+  createPlatform(8250, 150, '1');
+  createPlatform(8250, 400, '2');
+  createPlatform(8300, 350, '2');
+  createPlatform(8400, 250, '1');
+  createPlatform(8450, 250, '2');
+  createPlatform(8550, 10, '2');
+  createPlatform(8600, 400, '4');
+  createPlatform(8670, 250, '2');
+  createPlatform(8800, 0, '2');
+  createPlatform(8850, 50, '2');
+  createPlatform(8850, 350, '1');
+  createPlatform(8900, 400, '2');
+  createPlatform(9050, 450, '2');
+  createPlatform(9100, 500, '2');
+  createPlatform(9200, 400, '1');
+  createPlatform(9250, 300, '2');
+  createPlatform(9350, 200, '2');
+  createPlatform(9450, 350, '1');
+  createPlatform(9500, 400, '2');
   // week7
+  createPlatform(9650, 300, '1');
+  createPlatform(9750, 200, '1');
+  createPlatform(9850, 350, '1');
+  createPlatform(10000, 250, '1');
+  createPlatform(10000, 450, '1');
+  createPlatform(10050, 450, '3');
+  createPlatform(10100, 150, '1');
+  createPlatform(10150, 100, '1');
+  createPlatform(10200, 550, '1');
+  createPlatform(10300, 550, '3');
+  createPlatform(10300, 200, '1');
+  createGround(10500, 0, 4.75);
+  createGround(10600, 50, 3.5);
+  createGround(10700, 100, 2.75);
+  createGround(10800, 150, 2);
+  createGround(10800, 400, 3);
+  createGround(10700, 450, 3.25);
+  createGround(10600, 500, 3.5);
+  createGround(10500, 550, 3.75);
   // week8
+  createGround(12200, 0, 3);
+  createGround(12200, 50, 3);
+  createGround(12300, 100, 2.5);
+  createGround(12400, 150, 2);
+  createGround(12500, 150, 1.5);
+  createGround(12500, 200, 1.5);
+  createPlatform(11350, 350, '3');
+  createGround(11600, 550, 6);
+  createGround(12200, 500, 3);
+  createGround(12300, 450, 2.5);
+  createGround(12400, 400, 2.5);
+  createGround(12500, 350, 1.5);
 };
 
 createPlatform = function(x, y, platformType) {
@@ -60,14 +149,16 @@ createPlatform = function(x, y, platformType) {
 
 createGrounds = function() {
   // createGround(x, xscale)
-  createGround(0, 1.75);
-  createGround(400, 0.75);
-  createGround(700, 6);
-  createGround(2600, 3.5);
+  // xscale = length/200
+  createGround(0, 550, 1.75);
+  createGround(400, 550, 0.75);
+  createGround(700, 550, 6);
+  createGround(2600, 550, 3.5);
+  createGround(5400, 550, 3);
 }
 
-createGround = function(x, xscale) {
-  var ground = platforms.create(x, 550, '5');
+createGround = function(x, y, xscale) {
+  var ground = platforms.create(x, y, '5');
   ground.scale.setTo(xscale, 1);
   ground.body.immovable = true;
 }

@@ -12,7 +12,7 @@ theGame.prototype = {
 
     addAudio.apply(this);
 
-    player = this.add.sprite(5, 5, 'player');
+    player = this.add.sprite(6300, 5, 'player');
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
 
@@ -70,7 +70,7 @@ theGame.prototype = {
     var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
     if (health > 900) {
-      health = 1000
+      health = 1000;
     } else {
       health += 100;
     }
@@ -102,7 +102,7 @@ theGame.prototype = {
   restartGame: function() {
     health = 1000;
     points = 0;
-    bullets = 5
+    bullets = 5;
     weapon.resetShots();
     this.state.start("Game");
   }
