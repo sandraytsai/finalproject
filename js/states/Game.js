@@ -10,10 +10,7 @@ theGame.prototype = {
     this.add.tileSprite(0, 0, 12800, 600, 'background');
     this.world.setBounds(0, 0, 12800, 600);
 
-    shoot = this.add.audio('shoot');
-    jump = this.add.audio('jump');
-    bgmusic = this.add.audio('bgmusic', 0.5, true)
-    bgmusic.play();
+    addAudio.apply(this);
 
     player = this.add.sprite(5, 5, 'player');
     this.physics.arcade.enable(player);
@@ -21,7 +18,7 @@ theGame.prototype = {
 
     createPlatforms.apply(this);
 
-    createGround.apply(this);
+    createGrounds.apply(this);
 
     createDiamonds.apply(this);
 

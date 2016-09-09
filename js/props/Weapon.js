@@ -17,7 +17,7 @@ weaponDirection = function() {
   } else {
     weapon.trackSprite(player, 40, 10, true);
     weapon.bulletSpeed = 600;
-  }
+  };
 }
 
 weaponFire = function() {
