@@ -17,19 +17,12 @@ theGame.prototype = {
     createPlayer.apply(this);
 
     createPlatforms.apply(this);
-
     createGrounds.apply(this);
-
     createDiamonds.apply(this);
-
     createFirstaids.apply(this);
-
     createEnemies.apply(this);
-
     createWeapon.apply(this);
-
     createText.apply(this, [points])
-
     playerStatus.apply(this, [health, bullets]);
 
     cursors = this.input.keyboard.createCursorKeys();
@@ -110,6 +103,7 @@ theGame.prototype = {
     health = 1000;
     points = 0;
     bullets = 5
+    weapon.resetShots();
     this.state.start("Game");
   }
 }

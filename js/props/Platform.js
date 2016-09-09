@@ -46,7 +46,10 @@ createPlatforms = function() {
   createPlatform(4450, 450, '5');
   createPlatform(4700, 350, '1');
   // week4
-  
+  // week5
+  // week6
+  // week7
+  // week8
 };
 
 createPlatform = function(x, y, platformType) {

@@ -3,8 +3,7 @@ var preload = function(game){
 
 preload.prototype = {
   preload: function(){
-    var loadingBar = this.add.sprite(160,240,"loading");
-    loadingBar.anchor.setTo(0.5,0.5);
+    var loadingBar = this.add.sprite(400,300,"loading");
     this.load.setPreloadSprite(loadingBar);
     this.load.image('background','assets/b_12800x600.jpeg');
 

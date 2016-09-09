@@ -9,7 +9,6 @@ createPlayer = function() {
   player.animations.add('right', [3,4,5,4], 6, true);
   player.animations.add('jumpleft', [7], 1, true); 
   player.animations.add('jumpright', [6], 1, true); 
-
 };
 
 playerMovement = function() {
@@ -73,10 +72,6 @@ playerFalls = function() {
 }
 
 restartWeek = function(player) {
-  health = 1000;
-  bullets = 5;
-  weapon.resetShots();
-
   if ( player.x <= 1600) {
     player.x = 5;
     player.y = 0;
@@ -114,10 +109,6 @@ gameOver = function() {
     var gameoverscreen = this.add.button(390, 250,"bullet", this.restartGame,this);
     gameoverscreen.fixedToCamera = true;
     player.kill();
-
-    health = 1000;
-    bullets = 5;
-    weapon.resetShots();
   };
 }
 
