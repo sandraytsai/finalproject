@@ -24,7 +24,10 @@ preload.prototype = {
     this.load.image('bullet', 'assets/star.png');
     this.load.image('firstaid', 'assets/firstaid.png');
 
-    this.load.spritesheet('player', 'assets/megaman2_14f.png', 35, 32);
+// BELOW --- commented out due to ATLAS TESTING
+
+    // this.load.spritesheet('player', 'assets/megaman2_14f.png', 35, 32);
+
     this.load.spritesheet('enemy1', 'assets/dude.png', 32, 48);
     this.load.spritesheet('enemy2', 'assets/player.png', 32, 32);
 
@@ -34,8 +37,8 @@ preload.prototype = {
 
     // TEXTURE ATLAS TESTING //////////////////////////////////////
 
-    this.load.atlas('sandra', 'assets/atlas_json/main.png', 'assets/atlas_json/main.json');
 
+    this.load.atlas('player', 'assets/sandra_atlas/main.png', 'assets/sandra_atlas/main.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 
     // TEXTURE ATLAS TESTING //////////////////////////////////////
   },

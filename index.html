@@ -10,7 +10,15 @@
     <script src="js/states/Ending.js"></script>
     <script src="js/props/Audio.js"></script>
     <script src="js/props/Enemy.js"></script>
-    <script src="js/props/Player.js"></script>
+
+    <!-- >>>>>>>>>> TESTING FOR TEXTURE ATLAS <<<<<<<<<<<<< -->
+
+    <!-- <script src="js/props/Player.js"></script> -->
+
+    <script src="js/props/Sandra.js"></script>
+
+    <!-- >>>>>>>>>> TESTING FOR TEXTURE ATLAS <<<<<<<<<<<<< -->
+
     <script src="js/props/Platform.js"></script>
     <script src="js/props/Diamond.js"></script>
     <script src="js/props/Firstaid.js"></script>
@@ -20,7 +28,7 @@
         body{margin:0; background-color: black}
       </style>
       <script>
-        (function() { 
+        (function() {
           var game = new Phaser.Game(800, 600, Phaser.AUTO, "game");
           game.state.add("Boot",boot);
           game.state.add("Preload",preload);
@@ -29,7 +37,7 @@
           game.state.add("Game",theGame);
           game.state.add("Ending",ending)
           game.state.start("Boot");
-        })();    
+        })();
       </script>
     </head>
   <body>
