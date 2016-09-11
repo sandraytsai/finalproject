@@ -12,7 +12,7 @@ theGame.prototype = {
 
     addAudio.apply(this);
 
-    player = this.add.sprite(6300, 5, 'player');
+    player = this.add.sprite(5, 5, 'player');
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
 
@@ -31,7 +31,7 @@ theGame.prototype = {
     this.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
   },
-  
+
   update: function(){
     this.physics.arcade.collide(player, platforms);
     this.physics.arcade.collide(enemies, platforms, this.moveEnemy);
@@ -54,7 +54,7 @@ theGame.prototype = {
 
     weaponFire();
     weaponDirection();
-    
+
     gameOver.apply(this);
     winGame.apply(this);
 
@@ -77,10 +77,10 @@ theGame.prototype = {
   },
   attackEnemy: function(weapon, enemy) {
     enemy.health -= 1;
-    weapon.kill();  
+    weapon.kill();
     if (enemy.health == 0) {
       enemy.kill();
-    } 
+    }
   },
   moveEnemy: function(enemy, platform) {
     if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width-2) || enemy.body.velocity.x < 0 && enemy.x < platform.x+2) {
