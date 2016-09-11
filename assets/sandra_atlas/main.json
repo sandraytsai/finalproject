@@ -1,0 +1,178 @@
+{
+"frames": [
+	{
+		"filename": "sandra_atlas_01.png",
+		"frame": {"x":289, "y":116, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_02.png",
+		"frame": {"x":289, "y":116, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_03.png",
+		"frame": {"x":289, "y":116, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_04.png",
+		"frame": {"x":285, "y":55, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_05.png",
+		"frame": {"x":289, "y":177, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_06.png",
+		"frame": {"x":324, "y":0, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_07.png",
+		"frame": {"x":324, "y":0, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_08.png",
+		"frame": {"x":324, "y":0, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_09.png",
+		"frame": {"x":130, "y":185, "w":54, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+		"sourceSize": {"w":54,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_10.png",
+		"frame": {"x":187, "y":110, "w":48, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":54},
+		"sourceSize": {"w":48,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_11.png",
+		"frame": {"x":187, "y":55, "w":52, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":52,"h":54},
+		"sourceSize": {"w":52,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_12.png",
+		"frame": {"x":187, "y":110, "w":48, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":54},
+		"sourceSize": {"w":48,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_13.png",
+		"frame": {"x":236, "y":110, "w":48, "h":62},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":62},
+		"sourceSize": {"w":48,"h":62}
+	},
+	{
+		"filename": "sandra_atlas_14.png",
+		"frame": {"x":240, "y":173, "w":48, "h":62},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":62},
+		"sourceSize": {"w":48,"h":62}
+	},
+	{
+		"filename": "sandra_atlas_15.png",
+		"frame": {"x":238, "y":0, "w":48, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":54},
+		"sourceSize": {"w":48,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_16.png",
+		"frame": {"x":185, "y":0, "w":52, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":52,"h":54},
+		"sourceSize": {"w":52,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_17.png",
+		"frame": {"x":238, "y":0, "w":48, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":54},
+		"sourceSize": {"w":48,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_18.png",
+		"frame": {"x":185, "y":185, "w":54, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+		"sourceSize": {"w":54,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_19.png",
+		"frame": {"x":130, "y":124, "w":56, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":56,"h":60},
+		"sourceSize": {"w":56,"h":60}
+	},
+	{
+		"filename": "sandra_atlas_20.png",
+		"frame": {"x":0, "y":0, "w":66, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":66,"h":54},
+		"sourceSize": {"w":66,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_21.png",
+		"frame": {"x":0, "y":165, "w":64, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":54},
+		"sourceSize": {"w":64,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_22.png",
+		"frame": {"x":65, "y":110, "w":64, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":54},
+		"sourceSize": {"w":64,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_23.png",
+		"frame": {"x":67, "y":0, "w":58, "h":62},
+		"spriteSourceSize": {"x":0,"y":0,"w":58,"h":62},
+		"sourceSize": {"w":58,"h":62}
+	},
+	{
+		"filename": "sandra_atlas_24.png",
+		"frame": {"x":126, "y":0, "w":58, "h":62},
+		"spriteSourceSize": {"x":0,"y":0,"w":58,"h":62},
+		"sourceSize": {"w":58,"h":62}
+	},
+	{
+		"filename": "sandra_atlas_25.png",
+		"frame": {"x":0, "y":110, "w":64, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":54},
+		"sourceSize": {"w":64,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_26.png",
+		"frame": {"x":65, "y":165, "w":64, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":54},
+		"sourceSize": {"w":64,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_27.png",
+		"frame": {"x":0, "y":55, "w":66, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":66,"h":54},
+		"sourceSize": {"w":66,"h":54}
+	},
+	{
+		"filename": "sandra_atlas_28.png",
+		"frame": {"x":130, "y":63, "w":56, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":56,"h":60},
+		"sourceSize": {"w":56,"h":60}
+	}
+
+],
+"meta": {
+	"image": "main.png",
+	"size": {"w": 512, "h": 256},
+	"scale": "1"
+}
+}
