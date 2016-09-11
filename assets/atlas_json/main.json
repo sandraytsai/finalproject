@@ -1,0 +1,94 @@
+{
+"frames": [
+	{
+		"filename": "sandra_2x_01.png",
+		"frame": {"x":120, "y":0, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_2x_02.png",
+		"frame": {"x":120, "y":0, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_2x_03.png",
+		"frame": {"x":120, "y":0, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_2x_04.png",
+		"frame": {"x":116, "y":173, "w":38, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":38,"h":60},
+		"sourceSize": {"w":38,"h":60}
+	},
+	{
+		"filename": "sandra_2x_05.png",
+		"frame": {"x":65, "y":55, "w":54, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":54,"h":54},
+		"sourceSize": {"w":54,"h":54}
+	},
+	{
+		"filename": "sandra_2x_06.png",
+		"frame": {"x":65, "y":110, "w":48, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":54},
+		"sourceSize": {"w":48,"h":54}
+	},
+	{
+		"filename": "sandra_2x_07.png",
+		"frame": {"x":67, "y":0, "w":52, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":52,"h":54},
+		"sourceSize": {"w":52,"h":54}
+	},
+	{
+		"filename": "sandra_2x_08.png",
+		"frame": {"x":65, "y":110, "w":48, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":54},
+		"sourceSize": {"w":48,"h":54}
+	},
+	{
+		"filename": "sandra_2x_09.png",
+		"frame": {"x":116, "y":110, "w":48, "h":62},
+		"spriteSourceSize": {"x":0,"y":0,"w":48,"h":62},
+		"sourceSize": {"w":48,"h":62}
+	},
+	{
+		"filename": "sandra_2x_10.png",
+		"frame": {"x":59, "y":165, "w":56, "h":60},
+		"spriteSourceSize": {"x":0,"y":0,"w":56,"h":60},
+		"sourceSize": {"w":56,"h":60}
+	},
+	{
+		"filename": "sandra_2x_11.png",
+		"frame": {"x":0, "y":0, "w":66, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":66,"h":54},
+		"sourceSize": {"w":66,"h":54}
+	},
+	{
+		"filename": "sandra_2x_12.png",
+		"frame": {"x":0, "y":110, "w":64, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":54},
+		"sourceSize": {"w":64,"h":54}
+	},
+	{
+		"filename": "sandra_2x_13.png",
+		"frame": {"x":0, "y":55, "w":64, "h":54},
+		"spriteSourceSize": {"x":0,"y":0,"w":64,"h":54},
+		"sourceSize": {"w":64,"h":54}
+	},
+	{
+		"filename": "sandra_2x_14.png",
+		"frame": {"x":0, "y":165, "w":58, "h":62},
+		"spriteSourceSize": {"x":0,"y":0,"w":58,"h":62},
+		"sourceSize": {"w":58,"h":62}
+	}
+
+],
+"meta": {
+	"image": "main.png",
+	"size": {"w": 256, "h": 256},
+	"scale": "1"
+}
+}
