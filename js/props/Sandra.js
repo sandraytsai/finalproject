@@ -5,12 +5,29 @@ createPlayer = function() {
 
   facing = 'right';
 
-  player.animations.add('left', Phaser.Animation.generateFrameNames('sandra_atlas_', 5, 8), 6, true);
-  player.animations.add('right', Phaser.Animation.generateFrameNames('sandra_atlas_', 1, 4), 6, true);
-  player.animations.add('jumpleft', Phaser.Animation.generateFrameNames('sandra_atlas_', 14, 14), 6, true);
-  player.animations.add('jumpright', Phaser.Animation.generateFrameNames('sandra_atlas_', 13, 13), 6, true);
+  player.animations.add('left',
+    Phaser.Animation.generateFrameNames('sandra_atlas_', 5, 8, "", 2),
+    6,
+    true
+  );
 
-  // 'sandra_atlas_' <-- prefix of file name in atlas for animations.add
+  player.animations.add('right',
+    Phaser.Animation.generateFrameNames('sandra_atlas_', 1, 4, "", 2),
+    6,
+    true
+  );
+
+  player.animations.add('jumpleft',
+    Phaser.Animation.generateFrameNames('sandra_atlas_', 14, 14, "", 2),
+    6,
+    true
+  );
+
+  player.animations.add('jumpright',
+    Phaser.Animation.generateFrameNames('sandra_atlas_', 13, 13, "", 2),
+    6,
+    true
+  );
 
 };
 
@@ -20,17 +37,21 @@ playerMovement = function() {
   if (cursors.up.isDown && facing == 'left' ) {
     player.animations.play('jumpleft');
     jump.play();
+
     if ( player.body.touching.down ){
       player.body.velocity.y = -500;
     };
+
     if (cursors.left.isDown) {
       player.body.velocity.x = -200;
     };
+
     if (cursors.right.isDown) {
       player.animations.play('jumpright');
       player.body.velocity.x = 200;
       facing ='right'
     }
+
   } else if (cursors.up.isDown && facing == 'right') {
     player.animations.play('jumpright');
     jump.play();
@@ -52,8 +73,11 @@ playerMovement = function() {
       facing = 'left';
     }
   } else if (cursors.right.isDown) {
+    debugger;
+
     player.body.velocity.x = 200;
     player.animations.play('right');
+
     if (facing != 'right') {
       facing = 'right';
     }

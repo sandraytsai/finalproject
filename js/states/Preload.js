@@ -1,8 +1,8 @@
-var preload = function(game){
+var preload = function(game) {
 };
 
 preload.prototype = {
-  preload: function(){
+  preload: function() {
     var loadingBar = this.add.sprite(400,300,"loading");
     this.load.setPreloadSprite(loadingBar);
     this.load.image('background','assets/b_12800x600.jpeg');
@@ -37,8 +37,9 @@ preload.prototype = {
 
     // TEXTURE ATLAS TESTING //////////////////////////////////////
 
-
-    this.load.atlas('player', 'assets/sandra_atlas/main.png', 'assets/sandra_atlas/main.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+    /*setTimeout(() => {
+        this.load.atlas('player', 'assets/sandra_atlas/main.png', 'assets/sandra_atlas/main.json', Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
+    });*/
 
     // TEXTURE ATLAS TESTING //////////////////////////////////////
   },

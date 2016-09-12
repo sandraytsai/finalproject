@@ -27,19 +27,19 @@
       <style>
         body{margin:0; background-color: black}
       </style>
+    </head>
+  <body>
       <script>
         (function() {
           var game = new Phaser.Game(800, 600, Phaser.AUTO, "game");
-          game.state.add("Boot",boot);
-          game.state.add("Preload",preload);
-          game.state.add("Menu",menu);
-          game.state.add("Intro",intro);
-          game.state.add("Game",theGame);
-          game.state.add("Ending",ending)
-          game.state.start("Boot");
+          game.state.add("Ending", ending);
+          game.state.add("Game", theGame);
+          game.state.add("Intro", intro);
+          game.state.add("Menu", menu);
+          game.state.add("Preload", preload);
+
+          game.state.add("Boot", boot, true);
         })();
       </script>
-    </head>
-  <body>
   </body>
 </html>
