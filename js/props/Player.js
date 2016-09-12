@@ -95,7 +95,7 @@ restartWeek = function(player) {
     player.y = 0;
   } else {
     player.x = 11205;
-    player.y = 0;
+    player.y = 320;
   };
 }
 

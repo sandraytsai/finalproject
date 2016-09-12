@@ -27,6 +27,7 @@ preload.prototype = {
     this.load.spritesheet('player', 'assets/megaman2_14f.png', 35, 32);
     this.load.spritesheet('enemy1', 'assets/dude.png', 32, 48);
     this.load.spritesheet('enemy2', 'assets/player.png', 32, 32);
+    this.load.spritesheet('boss', 'assets/redball.png', 256, 256);
     
     this.load.audio('shoot', 'assets/audio/Strong_Punch.mp3');
     this.load.audio('jump', 'assets/audio/Mario_Jumping.mp3');

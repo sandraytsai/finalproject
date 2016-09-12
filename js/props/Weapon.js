@@ -1,9 +1,10 @@
-createWeapon = function() {
+  createWeapon = function() {
   weapon = this.add.weapon(10, 'bullet');
   weapon.bulletKillType = Phaser.Weapon.KILL_DISTANCE;
   weapon.bulletKillDistance = 800;
   weapon.fireRate = 250;
   weapon.fireLimit = 5;
+  weapon.trackSprite(player, 1, 10, true);
   weapon.onFire.add(function(){
     bullets -= 1;
     shoot.play();

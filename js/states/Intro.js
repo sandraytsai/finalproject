@@ -10,19 +10,12 @@ intro.prototype = {
     createPlayer(player);
     player.body.velocity.x = 300;
     player.animations.play('right');
-    var gameself = this
-    setTimeout(function() {
-      gameself.game.state.start("Game");
-    }, 3000);
-    // playButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
   },
 
   update: function(){
     if (player.x > 720) {
       player.kill();
+      this.game.state.start("Game");
     };
-    // if (playButton.isDown) {
-    //   this.game.state.start("Game");
-    // };
   }
 };
