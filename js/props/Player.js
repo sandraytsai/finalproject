@@ -5,10 +5,10 @@ createPlayer = function() {
 
   facing = 'right';
 
-  player.animations.add('left', [8,9,10,9], 6, true);
-  player.animations.add('right', [3,4,5,4], 6, true);
-  player.animations.add('jumpleft', [7], 1, true); 
-  player.animations.add('jumpright', [6], 1, true); 
+  player.animations.add('left', [7,8,9,8], 6, true);
+  player.animations.add('right', [2,3,4,3], 6, true);
+  player.animations.add('jumpleft', [6], 1, true); 
+  player.animations.add('jumpright', [5], 1, true); 
 };
 
 playerMovement = function() {
@@ -26,7 +26,7 @@ playerMovement = function() {
     if (cursors.right.isDown) {
       player.animations.play('jumpright');
       player.body.velocity.x = 200;
-      facing ='right'
+      facing ='right';
     }
   } else if (cursors.up.isDown && facing == 'right') {
     player.animations.play('jumpright');
@@ -40,7 +40,7 @@ playerMovement = function() {
     if (cursors.left.isDown) {
       player.animations.play('jumpleft');
       player.body.velocity.x = -200;
-      facing ='left'
+      facing ='left';
     }
   } else if (cursors.left.isDown) {
     player.body.velocity.x = -200;
@@ -57,7 +57,7 @@ playerMovement = function() {
   } else {
     player.animations.stop();
     if (facing == 'left') {
-      player.frame = 13;
+      player.frame = 11;
     } else {
       player.frame = 0;
     }
@@ -103,14 +103,14 @@ gameOver = function() {
   if (health <= 0) {
     var gameoverbutton = this.add.image(330, 200, 'pinkblock');
     gameoverbutton.fixedToCamera = true;
-    var gameoverscreen = this.add.button(390, 250,"bullet", this.restartGame,this);
+    var gameoverscreen = this.add.button(250, 250,"restart-button", this.restartGame,this);
     gameoverscreen.fixedToCamera = true;
     player.kill();
   };
 }
 
 winGame = function() {
-  if (player.body.x > 12750) {
+  if (player.body.x > 12730) {
     this.state.start("Ending");
     health = 1000;
     bullets = 5;

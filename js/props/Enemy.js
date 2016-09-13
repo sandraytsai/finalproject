@@ -1,11 +1,12 @@
 createEnemies = function() {
   enemies = this.add.group();
   enemies.enableBody = true;
-  createEnemy.apply(this, [470, 5, 'enemy1']);
-  createEnemy.apply(this, [600, 5, 'enemy1']);
-  createEnemy.apply(this, [1000, 300, 'enemy1']);
-  createEnemy.apply(this, [1230, 400, 'enemy2']);
-  createEnemy.apply(this, [1700, 5, 'enemy2']);
+  // w1
+  createEnemy.apply(this, [470, 5, 'rubybaddie']);
+  createEnemy.apply(this, [600, 5, 'rubybaddie']);
+  createEnemy.apply(this, [1050, 200, 'sinatrabaddie']);
+  createEnemy.apply(this, [1230, 400, 'sinatrabaddie']);
+  createEnemy.apply(this, [1700, 5, 'jsbaddie']);
 }
 
 createEnemy = function(x, y, type) {
@@ -16,14 +17,17 @@ createEnemy = function(x, y, type) {
   enemy.body.gravity.y = 300;
   enemy.body.collideWorldBounds = true;
 
-  if (type == 'enemy1') {
+  enemy.animations.add('left', [0, 1], 4, true);
+  enemy.animations.add('right', [2, 3], 4 , true);
+
+  if (type == 'rubybaddie') {
     enemy.health = 1;
-    enemy.animations.add('left', [0, 1, 2, 3], 10, true);
-    enemy.animations.add('right', [5, 6, 7, 8], 10, true);
-  } else if (type == 'enemy2') {
+  } else if (type == 'sinatrabaddie') {
+    enemy.health = 2;
+  } else if (type == 'jsbaddie') {
     enemy.health = 3;
-    enemy.animations.add('left', [0, 1], 10, true);
-    enemy.animations.add('right', [2, 3], 10, true);
+    enemy.animations.add('left', [0, 1], 2, true);
+    enemy.animations.add('right', [2, 3], 2 , true);
   };
 }
 
@@ -47,16 +51,17 @@ createEnemyWeapon = function() {
   enemyweapon.autofire = true;
   enemyweapon.bulletSpeed = -300;
   enemyweapon.fireAngle = 270;
-  enemyweapon.bulletAngleVariance = 100
+  enemyweapon.bulletAngleVariance = 100;
 }
 
 
 createObstacle = function() {
-  obstacle = this.add.weapon(20, 'bullet');
+  obstacle = this.add.weapon(20, 'bug');
   obstacle.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
-  obstacle.x = 610;
+  obstacle.x = 600;
   obstacle.y = 600;
   obstacle.autofire = true;
-  obstacle.fireRate = 700; 
-  obstacle.fireAngle = 270;
+  obstacle.fireRate = 2000; 
+  obstacle.bulletAngleOffset = 90;  
+  // obstacle.fireAngle = Phaser.ANGLE_UP;
 }

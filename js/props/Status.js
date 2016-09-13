@@ -5,9 +5,11 @@ createText = function(points) {
 
 playerStatus = function(health, bullets) {
   var playerhealth = this.add.sprite(5, 0, 'player');
+  playerhealth.scale.setTo(0.5, 0.5)
   playerhealth.fixedToCamera = true;
-  var playerbullet = this.add.image(5, 50, 'bullet');
+  var playerbullet = this.add.image(5, 55, 'bullet');
   playerbullet.fixedToCamera = true;
+  playerbullet.scale.setTo(0.75, 0.75);
 
   var redhealth = this.add.image(35, 10, 'redhealth');
   redhealth.fixedToCamera = true;

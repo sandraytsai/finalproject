@@ -6,6 +6,9 @@ preload.prototype = {
     var loadingBar = this.add.sprite(400,300,"loading");
     this.load.setPreloadSprite(loadingBar);
     this.load.image('background','assets/b_12800x600.jpeg');
+    this.load.image('intro-background', 'assets/intro-animation.png');
+    this.load.image('start-button', 'assets/start-button.png');
+    this.load.image('restart-button', 'assets/restart-button.png');
 
     this.load.image('1', 'assets/platforms/block_one.png');
     this.load.image('2', 'assets/platforms/block_two.png');
@@ -21,12 +24,14 @@ preload.prototype = {
 
     this.load.image('pinkblock', 'assets/pinkblock.jpg');
     this.load.image('diamond', 'assets/diamond.png');
-    this.load.image('bullet', 'assets/star.png');
+    this.load.image('bug', 'assets/baddies/bug_32x32.png');
+    this.load.spritesheet('bullet', 'assets/bullet_y_40x18.png', 40, 18);
     this.load.image('firstaid', 'assets/firstaid.png');
 
-    this.load.spritesheet('player', 'assets/megaman2_14f.png', 35, 32);
-    this.load.spritesheet('enemy1', 'assets/dude.png', 32, 48);
-    this.load.spritesheet('enemy2', 'assets/player.png', 32, 32);
+    this.load.spritesheet('player', 'assets/sandra_34x32.png', 68, 64);
+    this.load.spritesheet('sinatrabaddie', 'assets/baddies/sinatra-baddie.png', 32, 42);
+    this.load.spritesheet('rubybaddie', 'assets/baddies/ruby-baddie.png', 32, 41);
+    this.load.spritesheet('jsbaddie', 'assets/baddies/js_baddie-32x46.png', 32, 46);
     this.load.spritesheet('boss', 'assets/redball.png', 256, 256);
     
     this.load.audio('shoot', 'assets/audio/Strong_Punch.mp3');

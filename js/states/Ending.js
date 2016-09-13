@@ -16,7 +16,7 @@ ending.prototype = {
   update: function(){
     if (player.x > 720) {
       player.kill();
-      this.game.state.start("Game");
+      this.game.state.start("Menu");
     };
   }
 };

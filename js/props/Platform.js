@@ -5,7 +5,7 @@ createPlatforms = function() {
   createPlatform(300, 500, '1');
   createPlatform(400, 450, '2');
   createPlatform(500, 400, '4');
-  createPlatform(700, 400, '4');
+  createPlatform(650, 400, '4');
   createPlatform(800, 0, '7');
   createPlatform(800, 300, '6');
   createPlatform(900, 0, '8');
@@ -92,11 +92,11 @@ createPlatforms = function() {
   createPlatform(8300, 350, '2');
   createPlatform(8400, 250, '1');
   createPlatform(8450, 250, '2');
-  createPlatform(8550, 10, '2');
+  createPlatform(8550, 0, '2');
   createPlatform(8600, 400, '4');
   createPlatform(8670, 250, '2');
   createPlatform(8800, 0, '2');
-  createPlatform(8850, 50, '2');
+  createPlatform(8850, 0, '2');
   createPlatform(8850, 350, '1');
   createPlatform(8900, 400, '2');
   createPlatform(9050, 450, '2');
@@ -151,8 +151,9 @@ createGrounds = function() {
   // createGround(x, xscale)
   // xscale = length/200
   createGround(0, 550, 1.75);
-  createGround(400, 550, 0.75);
-  createGround(700, 550, 6);
+  createGround(400, 550, 0.25);
+  createGround(500, 550, 0.25);
+  createGround(650, 550, 5.75);
   createGround(2600, 550, 3.5);
   createGround(5400, 550, 3);
 }

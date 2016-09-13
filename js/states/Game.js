@@ -13,6 +13,8 @@ theGame.prototype = {
     addAudio.apply(this);
 
     player = this.add.sprite(5, 5, 'player');
+    player.scale.setTo(0.78,0.78);
+
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
 
@@ -20,20 +22,19 @@ theGame.prototype = {
     createPlatforms.apply(this);
     createGrounds.apply(this);
     createDiamonds.apply(this);
-    createFirstaids.apply(this);
+    createFirstaids.apply(this)
     createEnemies.apply(this);
     createBoss.apply(this)
 
     createEnemyWeapon.apply(this);
     createWeapon.apply(this);
-    createText.apply(this, [points])
+    createText.apply(this, [points]);
     playerStatus.apply(this, [health, bullets]);
 
     cursors = this.input.keyboard.createCursorKeys();
     fireButton = this.input.keyboard.addKey(Phaser.KeyCode.SPACEBAR);
 
     this.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
-
   },
   
   update: function(){
@@ -46,15 +47,14 @@ theGame.prototype = {
     this.physics.arcade.collide(obstacle.bullets, platforms, this.killObstacles);
     this.physics.arcade.collide(enemyweapon.bullets, platforms, this.killEnemyBullet);
 
-
     this.physics.arcade.overlap(player, diamonds, this.collectDiamonds, null, this)
     this.physics.arcade.overlap(player, firstaids, this.collectFirstaids, null, this)
     this.physics.arcade.overlap(weapon.bullets, enemies, this.attackEnemy, null, this)
     this.physics.arcade.overlap(weapon.bullets, boss, this.attackBoss, null, this)
     this.physics.arcade.overlap(player, enemies, this.hitByEnemy);
+    this.physics.arcade.overlap(player, boss, this.touchBoss);
     this.physics.arcade.overlap(player, obstacle.bullets, this.hitByObstacle);
     this.physics.arcade.overlap(player, enemyweapon.bullets, this.hitByEnemyWeapon);
-
 
     player.bringToTop();
 
@@ -69,7 +69,6 @@ theGame.prototype = {
     
     gameOver.apply(this);
     winGame.apply(this);
-
   },
   collectDiamonds: function(player, diamond) {
     diamond.kill();
@@ -99,13 +98,13 @@ theGame.prototype = {
     weapon.kill();
     if (boss.health == 0) {
       boss.kill();
-      weapon.kill();
+      // enemyweapon.destroy();
       enemyweapon.autofire = false;
     };
   },
   moveEnemy: function(enemy, platform) {
     if (enemy.body.velocity.x > 0 && enemy.x > (platform.x+platform.width-enemy.width-2) || enemy.body.velocity.x < 0 && enemy.x < platform.x+2) {
-      enemy.body.velocity.x *= -1
+      enemy.body.velocity.x *= -1;
     };
 
     if (enemy.body.velocity.x > 0) {
@@ -126,6 +125,9 @@ theGame.prototype = {
   hitByObstacle: function(player, obstacle) {
     obstacle.kill();
     health -= 50;
+  },
+  touchBoss: function() {
+    health -= 2;
   },
   killObstacles: function(obstacle, platform) {
     obstacle.kill();
