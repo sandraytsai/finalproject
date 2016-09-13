@@ -1,7 +1,7 @@
 var theGame = function(game){
 };
 
-var points = 0;
+// var points = 0;
 var health = 1000;
 var bullets = 5;
 
@@ -13,7 +13,7 @@ theGame.prototype = {
     addAudio.apply(this);
 
     player = this.add.sprite(5, 5, 'player');
-    player.scale.setTo(0.78,0.78);
+    player.scale.setTo(0.70,0.70);
 
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
@@ -21,14 +21,14 @@ theGame.prototype = {
     createObstacle.apply(this);
     createPlatforms.apply(this);
     createGrounds.apply(this);
-    createDiamonds.apply(this);
+    createAmmos.apply(this);
     createFirstaids.apply(this)
     createEnemies.apply(this);
     createBoss.apply(this)
 
     createEnemyWeapon.apply(this);
     createWeapon.apply(this);
-    createText.apply(this, [points]);
+    // createText.apply(this, [points]);
     playerStatus.apply(this, [health, bullets]);
 
     cursors = this.input.keyboard.createCursorKeys();
@@ -41,13 +41,13 @@ theGame.prototype = {
     this.physics.arcade.collide(player, platforms);
     this.physics.arcade.collide(boss, platforms);
     this.physics.arcade.collide(enemies, platforms, this.moveEnemy);
-    this.physics.arcade.collide(diamonds, platforms);
+    this.physics.arcade.collide(ammos, platforms);
     this.physics.arcade.collide(firstaids, platforms);
     this.physics.arcade.collide(weapon.bullets, platforms, this.killBullet);
     this.physics.arcade.collide(obstacle.bullets, platforms, this.killObstacles);
     this.physics.arcade.collide(enemyweapon.bullets, platforms, this.killEnemyBullet);
 
-    this.physics.arcade.overlap(player, diamonds, this.collectDiamonds, null, this)
+    this.physics.arcade.overlap(player, ammos, this.collectAmmos, null, this)
     this.physics.arcade.overlap(player, firstaids, this.collectFirstaids, null, this)
     this.physics.arcade.overlap(weapon.bullets, enemies, this.attackEnemy, null, this)
     this.physics.arcade.overlap(weapon.bullets, boss, this.attackBoss, null, this)
@@ -70,12 +70,12 @@ theGame.prototype = {
     gameOver.apply(this);
     winGame.apply(this);
   },
-  collectDiamonds: function(player, diamond) {
-    diamond.kill();
-    points += 1;
-    weapon.resetShots();
-    bullets = 5;
-    pointText.text = 'Points: ' + points;
+  collectAmmos: function(player, ammo) {
+    ammo.kill();
+    // points += 1;
+    weapon.resetShots(ammo.amount);
+    bullets = ammo.amount;
+    // pointText.text = 'Points: ' + points;
   },
   collectFirstaids: function(player, firstaid){
     var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');

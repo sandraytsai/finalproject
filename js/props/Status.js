@@ -1,7 +1,7 @@
-createText = function(points) {
-  pointText = this.add.text(15, 75, 'Points: ' + points, { fontSize: '24px', fill: '#000' });
-  pointText.fixedToCamera = true;
-};
+// createText = function(points) {
+//   pointText = this.add.text(15, 75, 'Points: ' + points, { fontSize: '24px', fill: '#000' });
+//   pointText.fixedToCamera = true;
+// };
 
 playerStatus = function(health, bullets) {
   var playerhealth = this.add.sprite(5, 0, 'player');

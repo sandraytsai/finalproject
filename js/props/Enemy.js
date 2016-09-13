@@ -63,5 +63,4 @@ createObstacle = function() {
   obstacle.autofire = true;
   obstacle.fireRate = 2000; 
   obstacle.bulletAngleOffset = 90;  
-  // obstacle.fireAngle = Phaser.ANGLE_UP;
 }

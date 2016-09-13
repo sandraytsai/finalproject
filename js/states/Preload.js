@@ -23,10 +23,11 @@ preload.prototype = {
     this.load.image('greenhealth', 'assets/green-25-100.png');
 
     this.load.image('pinkblock', 'assets/pinkblock.jpg');
-    this.load.image('diamond', 'assets/diamond.png');
+    this.load.image('ammo', 'assets/items/ammo-box.png');
+    this.load.image('super-ammo', 'assets/items/super-ammo.png');
     this.load.image('bug', 'assets/baddies/bug_32x32.png');
     this.load.spritesheet('bullet', 'assets/bullet_y_40x18.png', 40, 18);
-    this.load.image('firstaid', 'assets/firstaid.png');
+    this.load.image('healthbox', 'assets/items/health-box.png');
 
     this.load.spritesheet('player', 'assets/sandra_34x32.png', 68, 64);
     this.load.spritesheet('sinatrabaddie', 'assets/baddies/sinatra-baddie.png', 32, 42);
