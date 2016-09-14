@@ -7,7 +7,15 @@ var bullets = 5;
 
 theGame.prototype = {
   create: function(){
-    this.add.tileSprite(0, 0, 12800, 600, 'background');
+    this.add.tileSprite(0, 0, 12800, 600, 'bg1');
+    this.add.tileSprite(1600, 0, 12800, 600, 'bg2');
+    this.add.tileSprite(3200, 0, 12800, 600, 'bg3');
+    this.add.tileSprite(4800, 0, 12800, 600, 'bg4');
+    this.add.tileSprite(6400, 0, 12800, 600, 'bg5');
+    this.add.tileSprite(8000, 0, 12800, 600, 'bg6');
+    this.add.tileSprite(9600, 0, 12800, 600, 'bg7');
+    this.add.tileSprite(11200, 0, 12800, 600, 'bg8');
+
     this.world.setBounds(0, 0, 12800, 600);
 
     addAudio.apply(this);

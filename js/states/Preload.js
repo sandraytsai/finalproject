@@ -5,10 +5,19 @@ preload.prototype = {
   preload: function(){
     var loadingBar = this.add.sprite(400,300,"loading");
     this.load.setPreloadSprite(loadingBar);
-    this.load.image('background','assets/b_12800x600.jpeg');
+    this.load.image('mainbg','assets/menubg.png');
     this.load.image('intro-background', 'assets/intro-animation.png');
     this.load.image('start-button', 'assets/start-button.png');
     this.load.image('restart-button', 'assets/restart-button.png');
+
+    this.load.image('bg1','assets/background/bkgrd2_00.png');
+    this.load.image('bg3','assets/background/bkgnd_02.png');
+    this.load.image('bg2','assets/background/bkgnd_03.png');
+    this.load.image('bg4','assets/background/bkgnd_04.png');
+    this.load.image('bg5','assets/background/bkgrd2_01.png');
+    this.load.image('bg6','assets/background/bkgrd2_04.png');
+    this.load.image('bg7','assets/background/bkgrd2_02.png');
+    this.load.image('bg8','assets/background/bkgnd_08.png')
 
     this.load.image('1', 'assets/platforms/block_one.png');
     this.load.image('2', 'assets/platforms/block_two.png');
@@ -26,7 +35,7 @@ preload.prototype = {
     this.load.image('ammo', 'assets/items/ammo-box.png');
     this.load.image('super-ammo', 'assets/items/super-ammo.png');
     this.load.image('bug', 'assets/baddies/bug_32x32.png');
-    this.load.spritesheet('bullet', 'assets/bullet_y_40x18.png', 40, 18);
+    this.load.spritesheet('bullet', 'assets/yellow-bullet.png', 40, 18);
     this.load.image('healthbox', 'assets/items/health-box.png');
 
     this.load.spritesheet('player', 'assets/sandra_34x32.png', 68, 64);

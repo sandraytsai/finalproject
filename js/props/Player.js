@@ -101,9 +101,9 @@ restartWeek = function(player) {
 
 gameOver = function() {
   if (health <= 0) {
-    var gameoverbutton = this.add.image(330, 200, 'pinkblock');
+    var gameoverscreen = this.add.image(330, 200, 'pinkblock');
     gameoverbutton.fixedToCamera = true;
-    var gameoverscreen = this.add.button(250, 250,"restart-button", this.restartGame,this);
+    var gameoverbutton = this.add.button(250, 250,"restart-button", this.restartGame,this);
     gameoverscreen.fixedToCamera = true;
     player.kill();
   };
