@@ -133,7 +133,7 @@ createPlatforms = function() {
   createGround(12400, 150, 2);
   createGround(12500, 150, 1.5);
   createGround(12500, 200, 1.5);
-  createPlatform(11350, 350, '3');
+  createGround(11350, 350, 1);
   createGround(11600, 550, 6);
   createGround(12200, 500, 3);
   createGround(12300, 450, 2.5);

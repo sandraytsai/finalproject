@@ -16,7 +16,7 @@ playerMovement = function() {
 
   if (cursors.up.isDown && facing == 'left' ) {
     player.animations.play('jumpleft');
-    jump.play();
+    // jump.play();
     if ( player.body.touching.down ){
       player.body.velocity.y = -500;
     };
@@ -30,7 +30,7 @@ playerMovement = function() {
     }
   } else if (cursors.up.isDown && facing == 'right') {
     player.animations.play('jumpright');
-    jump.play();
+    // jump.play();
     if ( player.body.touching.down ){
       player.body.velocity.y = -500;
     };

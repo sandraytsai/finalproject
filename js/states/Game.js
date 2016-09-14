@@ -21,7 +21,7 @@ theGame.prototype = {
     addAudio.apply(this);
 
     player = this.add.sprite(5, 5, 'player');
-    player.scale.setTo(0.70,0.70);
+    player.scale.setTo(0.70, 0.70);
 
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
@@ -86,7 +86,6 @@ theGame.prototype = {
     // pointText.text = 'Points: ' + points;
   },
   collectFirstaids: function(player, firstaid){
-    var block = this.add.image(firstaid.x, firstaid.y - firstaid.height - 60, 'pinkblock');
     firstaid.kill();
     if (health > 900) {
       health = 1000;
@@ -106,7 +105,7 @@ theGame.prototype = {
     weapon.kill();
     if (boss.health == 0) {
       boss.kill();
-      // enemyweapon.destroy();
+      enemyweapon.destroy();
       enemyweapon.autofire = false;
     };
   },
