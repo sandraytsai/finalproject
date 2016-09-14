@@ -7,17 +7,19 @@ preload.prototype = {
     this.load.setPreloadSprite(loadingBar);
     this.load.image('mainbg','assets/menubg.png');
     this.load.image('intro-background', 'assets/intro-animation.png');
+    this.load.image('gameover', 'assets/sandra-game-over.png');
     this.load.image('start-button', 'assets/start-button.png');
     this.load.image('restart-button', 'assets/restart-button.png');
 
-    this.load.image('bg1','assets/background/bkgrd2_00.png');
-    this.load.image('bg3','assets/background/bkgnd_02.png');
-    this.load.image('bg2','assets/background/bkgnd_03.png');
-    this.load.image('bg4','assets/background/bkgnd_04.png');
-    this.load.image('bg5','assets/background/bkgrd2_01.png');
-    this.load.image('bg6','assets/background/bkgrd2_04.png');
-    this.load.image('bg7','assets/background/bkgrd2_02.png');
-    this.load.image('bg8','assets/background/bkgnd_08.png')
+    this.load.image('bg1','assets/background/lightbluewhite_bg.png');
+    this.load.image('bg2','assets/background/pink_bg.png');
+    this.load.image('bg3','assets/background/bkgrd2_06.png')
+    this.load.image('bg4','assets/background/bkgrd2_02.png');
+    this.load.image('bg5','assets/background/darkblue_bg.png');
+    this.load.image('bg6','assets/background/darkpurple_bg.png');
+    this.load.image('bg7','assets/background/lightblue_bg.png');
+    this.load.image('bg8','assets/background/red_bg.png');
+
 
     this.load.image('1', 'assets/platforms/block_one.png');
     this.load.image('2', 'assets/platforms/block_two.png');
@@ -28,8 +30,10 @@ preload.prototype = {
     this.load.image('7', 'assets/platforms/block_seven.png');
     this.load.image('8', 'assets/platforms/block_eight.png');
 
-    this.load.image('redhealth', 'assets/red-25-100.png');
-    this.load.image('greenhealth', 'assets/green-25-100.png');
+    this.load.image('ammobarbg', 'assets/ammobarbg.png');
+    this.load.image('ammobar', 'assets/ammobar.png');
+    this.load.image('healthbarbg', 'assets/healthbarbg.png');
+    this.load.image('healthbar', 'assets/healthbar.png');
 
     this.load.image('pinkblock', 'assets/pinkblock.jpg');
     this.load.image('ammo', 'assets/items/ammo-box.png');
