@@ -1,8 +1,12 @@
 createFirstaids= function() {
   firstaids = this.add.group();
   firstaids.enableBody = true;
-  // w1
-  createFirstaid(1150, 0);
+  createFirstaid(3150, 500);
+  createFirstaid(3150, 500);
+  createFirstaid(7900, 350);
+  createFirstaid(8110, 50);
+  createFirstaid(10840, 350);
+
 };
 
 createFirstaid= function(x,y) {

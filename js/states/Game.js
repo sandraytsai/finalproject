@@ -26,7 +26,7 @@ theGame.prototype = {
     this.physics.arcade.enable(player);
     createPlayer.apply(this);
 
-    createObstacle.apply(this);
+    createObstacles.apply(this);
     createPlatforms.apply(this);
     createGrounds.apply(this);
     createAmmos.apply(this);
@@ -52,7 +52,7 @@ theGame.prototype = {
     this.physics.arcade.collide(ammos, platforms);
     this.physics.arcade.collide(firstaids, platforms);
     this.physics.arcade.collide(weapon.bullets, platforms, this.killBullet);
-    this.physics.arcade.collide(obstacle.bullets, platforms, this.killObstacles);
+    // this.physics.arcade.collide(obstacle1.bullets, platforms, this.killObstacles);
     this.physics.arcade.collide(enemyweapon.bullets, platforms, this.killEnemyBullet);
 
     this.physics.arcade.overlap(player, ammos, this.collectAmmos, null, this)
@@ -61,7 +61,17 @@ theGame.prototype = {
     this.physics.arcade.overlap(weapon.bullets, boss, this.attackBoss, null, this)
     this.physics.arcade.overlap(player, enemies, this.hitByEnemy);
     this.physics.arcade.overlap(player, boss, this.touchBoss);
-    this.physics.arcade.overlap(player, obstacle.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle1.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle2.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle3.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle4.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle5.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle6.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle7.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle8.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle9.bullets, this.hitByObstacle);
+    this.physics.arcade.overlap(player, obstacle10.bullets, this.hitByObstacle);
+
     this.physics.arcade.overlap(player, enemyweapon.bullets, this.hitByEnemyWeapon);
 
     player.bringToTop();
@@ -90,7 +100,7 @@ theGame.prototype = {
     if (health > 900) {
       health = 1000;
     } else {
-      health += 100;
+      health += 200;
     }
   },
   attackEnemy: function(weapon, enemy) {
@@ -130,15 +140,15 @@ theGame.prototype = {
     health -= 2;
   },
   hitByObstacle: function(player, obstacle) {
-    obstacle.kill();
-    health -= 50;
+    // obstacle.kill();
+    health -= 5;
   },
   touchBoss: function() {
     health -= 2;
   },
-  killObstacles: function(obstacle, platform) {
-    obstacle.kill();
-  },
+  // killObstacles: function(obstacle, platform) {
+  //   obstacle.kill();
+  // },
   hitByEnemyWeapon: function(player, enemyweapon) {
     enemyweapon.kill();
     health -=30;
