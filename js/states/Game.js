@@ -12,7 +12,7 @@ theGame.prototype = {
 
     addAudio.apply(this);
 
-    player = this.add.sprite(5, 5, 'player');
+    player = this.add.sprite(12000, 5, 'player');
     player.scale.setTo(0.70, 0.70);
     this.physics.arcade.enable(player);
     createPlayer.apply(this);

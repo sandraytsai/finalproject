@@ -9,8 +9,8 @@ preload.prototype = {
     this.load.image('intro-background', 'assets/gamebasics/intro-animation.png');
     this.load.image('endingbutton', 'assets/gamebasics/endingbutton.png');
 
-    this.load.image('ending1', 'assets/gamebasics/ending1.jpg');
-    this.load.image('ending2', 'assets/gamebasics/ending2.jpg');
+    this.load.image('ending1', 'assets/gamebasics/ending1.png');
+    this.load.image('ending2', 'assets/gamebasics/ending2.png');
     this.load.image('gameover', 'assets/gamebasics/sandra-game-over.png');
     this.load.image('start-button', 'assets/gamebasics/start-button.png');
     this.load.image('restart-button', 'assets/gamebasics/restart-button.png');
@@ -37,17 +37,17 @@ preload.prototype = {
     this.load.image('7', 'assets/platforms/block_seven.png');
     this.load.image('8', 'assets/platforms/block_eight.png');
 
-    this.load.image('week1', 'assets/week1.png');
-    this.load.image('week2', 'assets/week2.png');
-    this.load.image('week3', 'assets/week3.png');
-    this.load.image('week4', 'assets/week4.png');
-    this.load.image('week5', 'assets/week5.png');
-    this.load.image('week6', 'assets/week6.png');
-    this.load.image('week7', 'assets/week7.png');
-    this.load.image('week8', 'assets/week8.png');
+    this.load.image('week1', 'assets/background/week1.png');
+    this.load.image('week2', 'assets/background/week2.png');
+    this.load.image('week3', 'assets/background/week3.png');
+    this.load.image('week4', 'assets/background/week4.png');
+    this.load.image('week5', 'assets/background/week5.png');
+    this.load.image('week6', 'assets/background/week6.png');
+    this.load.image('week7', 'assets/background/week7.png');
+    this.load.image('week8', 'assets/background/week8.png');
 
-    this.load.image('gate', 'assets/gate.png');
-    this.load.image('key', 'assets/key.png');
+    this.load.image('gate', 'assets/items/gate.png');
+    this.load.image('key', 'assets/items/key.png');
 
     this.load.image('ammo', 'assets/items/ammo-box.png');
     this.load.image('super-ammo', 'assets/items/super-ammo.png');
@@ -64,6 +64,7 @@ preload.prototype = {
     
     this.load.audio('shoot', 'assets/audio/bullet_sound.mp3');
     this.load.audio('jump', 'assets/audio/Mario_Jumping.mp3');
+    this.load.audio('applause', 'assets/audio/applause3.mp3');
     this.load.audio('bgmusic', 'assets/audio/backgroundmusic.wav');
   },
   create: function(){

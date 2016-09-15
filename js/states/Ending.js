@@ -16,6 +16,7 @@ ending1.prototype = {
     if (player.x > 65) {
       player.kill();
       this.game.state.start("Ending2");
+      shoot.play();
     };
   }
 };
