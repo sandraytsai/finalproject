@@ -1,22 +1,21 @@
-var ending = function(game){
+var ending1 = function(game){
 };
 
-ending.prototype = {
+ending1.prototype = {
   create: function(){
-    var background = this.game.add.tileSprite(0, 0, 5000, 1920, 'background');
-    var block = this.add.image(700, 300, '7');
-    var endingtext = this.add.text(300, 75, 'ENDING ANIMATION HERE', { fontSize: '24px', fill: '#000' });
-    player = this.game.add.sprite(5, 770, 'player');
+    var background = this.game.add.tileSprite(0, 0, 800, 600, 'ending1');
+    player = this.game.add.sprite(0, 470, 'player');
     this.physics.arcade.enable(player);
-    createPlayer(player);
-    player.body.velocity.x = 300;
+    player.body.velocity.x = 50;
+    player.body.velocity.y = -17;
+    player.animations.add('right', [2,3,4,3], 3, true);
     player.animations.play('right');
   },
 
   update: function(){
-    if (player.x > 720) {
+    if (player.x > 65) {
       player.kill();
-      this.game.state.start("Menu");
+      this.game.state.start("Ending2");
     };
   }
 };

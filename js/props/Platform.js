@@ -16,6 +16,7 @@ createPlatforms = function() {
   createPlatform(1200, 0, '8');
   createPlatform(1300, 200, '7');
   createPlatform(1400, 0, '5');
+  createPlatform(1575, 450, '2');
   createPlatform(1500, 450, '5');
   // week2
   var cieling = platforms.create(1600, 0, '5');
@@ -25,6 +26,7 @@ createPlatforms = function() {
   createPlatform(2000, 250, '5');
   createPlatform(2250, 450, '5');
   createPlatform(2600, 450, '4');
+  createPlatform(2650, 450, '3');
   createPlatform(2950, 450, '4');
   // week3
   createPlatform(3200, 550, '3');
@@ -50,7 +52,7 @@ createPlatforms = function() {
   createPlatform(5000, 400, '8');
   createPlatform(5400, 0, '7');
   createGround(5500, 300, 2, '6');
-  // createPlatform(5500, 300, '6');
+  createPlatform(5500, 200, '3');
   createPlatform(5600, 300, '6');
   createPlatform(5700, 350, '3');
   createPlatform(5850, 450, '1');
@@ -58,10 +60,11 @@ createPlatforms = function() {
   createPlatform(5950, 400, '4');
   createPlatform(6100, 400, '8');
   createPlatform(6100, 200, '6');
-  // createPlatform(6200, 250, '5');
+  createPlatform(6200, 250, '5');
   // week5
-  createGround(6200, 250, 4.5, '5');
+  createGround(6400, 250, 3.5, '5');
   createGround(6400, 300, 3.5, '5');
+  createPlatform(6400, 350, '4');
   createPlatform(6400, 500, '6');
   createPlatform(6600, 500, '6');
   createPlatform(6800, 500, '6');

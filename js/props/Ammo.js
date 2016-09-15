@@ -6,22 +6,24 @@ createAmmos = function() {
   createAmmo(950, 350, 'ammo');
   // w2
   createAmmo(2300, 400, 'ammo');
-  createAmmo(3050, 500, 'ammo');
   // w3
   createAmmo(4365, 300, 'ammo');
   // w4
   createAmmo(5100, 300, 'ammo');
-  createAmmo(5450, 500, 'ammo');
   createAmmo(6130, 100, 'super-ammo');
   // w5
-  createAmmo(6240, 350, 'super-ammo');
+  createAmmo(6840, 450, 'ammo');
+  createAmmo(7240, 350, 'super-ammo');
   // w6
   createAmmo(8260, 100, 'super-ammo');
+  createAmmo(8900, 350, 'ammo');
   // w7
-  createAmmo(9670, 250, 'super-ammo');
+  createAmmo(9660, 250, 'super-ammo');
+  createAmmo(10150, 350, 'ammo');
   createAmmo(11050, 350, 'super-ammo');
   // w8
   createAmmo(11300, 350, 'super-ammo');
+  createAmmo(11610, 500, 'ammo');
 };
 
 createAmmo = function(x, y, type) {

@@ -5,7 +5,7 @@
   weapon.addBulletAnimation('right', [0], 1, true);
   weapon.bulletKillDistance = 800;
   weapon.fireRate = 250;
-  weapon.fireLimit = 5;
+  weapon.fireLimit = 10;
   weapon.trackSprite(player, 1, 10, true);
   weapon.onFire.add(function(){
     bullets -= 1;

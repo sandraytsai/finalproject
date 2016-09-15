@@ -3,7 +3,7 @@ var intro = function(game){
 
 intro.prototype = {
   create: function(){
-    var background = this.game.add.tileSprite(0, 0, 5000, 1920, 'intro-background');
+    var background = this.game.add.tileSprite(0, 0, 800, 600, 'intro-background');
     player = this.game.add.sprite(5, 490, 'player');
     player.scale.setTo(0.75,0.75);
     this.physics.arcade.enable(player);

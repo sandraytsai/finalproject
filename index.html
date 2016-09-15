@@ -8,10 +8,14 @@
     <script src="js/states/Intro.js"></script>
     <script src="js/states/Game.js"></script>
     <script src="js/states/Ending.js"></script>
+    <script src="js/states/Ending2.js"></script>
+    <script src="js/props/Background.js"></script>
     <script src="js/props/Audio.js"></script>
     <script src="js/props/Enemy.js"></script>
     <script src="js/props/Player.js"></script>
     <script src="js/props/Platform.js"></script>
+    <script src="js/props/Key.js"></script>
+    <script src="js/props/Gate.js"></script>
     <script src="js/props/Ammo.js"></script>
     <script src="js/props/Healthbox.js"></script>
     <script src="js/props/Weapon.js"></script>
@@ -27,7 +31,8 @@
           game.state.add("Menu", menu);
           game.state.add("Intro", intro);
           game.state.add("Game", theGame);
-          game.state.add("Ending", ending);
+          game.state.add("Ending", ending1);
+          game.state.add("Ending2", ending2);
           game.state.start("Boot");
         })();    
       </script>

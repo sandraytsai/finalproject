@@ -115,5 +115,6 @@ winGame = function() {
     health = 1000;
     bullets = 5;
     weapon.resetShots();
-  }
+    bgmusic.stop();
+  };
 }

@@ -26,20 +26,19 @@ createEnemies = function() {
   createEnemy.apply(this, [6600, 200, 'rubybaddie']);
   createEnemy.apply(this, [6800, 200, 'sinatrabaddie']);
   createEnemy.apply(this, [7000, 200, 'rubybaddie']);
-  createEnemy.apply(this, [6450, 450, 'rubybaddie']);
   createEnemy.apply(this, [6610, 450, 'sinatrabaddie']);
-  createEnemy.apply(this, [6860, 450, 'rubybaddie']);
+  // createEnemy.apply(this, [6860, 450, 'rubybaddie']);
   createEnemy.apply(this, [7040, 450, 'sinatrabaddie']);
   createEnemy.apply(this, [7350, 350, 'rubybaddie']);
   createEnemy.apply(this, [7500, 350, 'sinatrabaddie']);
-  createEnemy.apply(this, [7650, 350, 'rubybaddie']);
+  // createEnemy.apply(this, [7650, 350, 'rubybaddie']);
   createEnemy.apply(this, [7800, 350, 'sinatrabaddie']);
   // w6
   createEnemy.apply(this, [8260, 350, 'jsbaddie']);
   createEnemy.apply(this, [8480, 200, 'jsbaddie']);
-  createEnemy.apply(this, [8870, 300, 'jsbaddie']);
+  createEnemy.apply(this, [8680, 200, 'jsbaddie']);
   createEnemy.apply(this, [9210, 350, 'jsbaddie']);
-  createEnemy.apply(this, [9520, 350, 'jsbaddie']);
+  createEnemy.apply(this, [9360, 100, 'jsbaddie']);
   // w7
   createEnemy.apply(this, [9870, 300, 'jsbaddie']);
   createEnemy.apply(this, [10100, 400, 'jsbaddie']);
@@ -93,26 +92,6 @@ createEnemyWeapon = function() {
 }
 
 createObstacles = function() {
-  // obstacles = this.add.group();
-  // obstacles.enableBody = true;
-  // // w1
-  // createObstacle.apply(this, [600, 600]);
-  // // w2
-  // createObstacle.apply(this, [1945, 600]);
-  // createObstacle.apply(this, [2500, 600]);
-  // // w3
-  // createObstacle.apply(this, [4035, 600]);
-  // // w4
-  // createObstacle.apply(this, [5335, 600]);
-  // createObstacle.apply(this, [6035, 600]);
-  // // w5
-  // createObstacle.apply(this, [7135, 600]);
-  // // w6
-  // createObstacle.apply(this, [8980, 600]);
-  // // w7
-  // createObstacle.apply(this, [9935, 600]);
-  // createObstacle.apply(this, [110435, 600]);
-
   // w1
   obstacle1 = this.add.weapon(5, 'bug');
   obstacle1.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
@@ -185,7 +164,7 @@ createObstacles = function() {
   obstacle9.bulletAngleOffset = 90;  
   obstacle10 = this.add.weapon(5, 'bug');
   obstacle10.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
-  obstacle10.x = 11045;
+  obstacle10.x = 10445;
   obstacle10.y = 600;
   obstacle10.autofire = true;
   obstacle10.fireRate = 1500; 

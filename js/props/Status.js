@@ -19,7 +19,7 @@ bulletStatus = function() {
   if (bullets < 0) {
     bullets = 0;
   };
-  ammobar.scale.setTo(bullets/5, 1);
+  ammobar.scale.setTo(bullets/10, 1);
 }
 
 healthStatus = function() {
